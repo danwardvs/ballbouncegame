@@ -38,4 +38,4 @@ sysinfo.txt
 *.unitypackage
 
 # Crashlytics generated file
-Assets/StreamingAssets/crashlytics-build.properties
+*/Assets/StreamingAssets/crashlytics-build.properties
