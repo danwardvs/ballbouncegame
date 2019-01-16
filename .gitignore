@@ -9,6 +9,12 @@
 # Android build data
 */.gradle/*
 
+# Editor version number
+*/BallBounceGame/ProjectSettings/ProjectVersion.txt
+
+
+
+
 # Visual Studio cache directory
 .vs/
 
