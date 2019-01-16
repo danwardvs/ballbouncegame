@@ -6,6 +6,9 @@
 */[Bb]uilds/*
 */Assets/AssetStoreTools*
 
+# Android build data
+*/.gradle/*
+
 # Visual Studio cache directory
 .vs/
 
