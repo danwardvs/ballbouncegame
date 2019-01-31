@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EndPoint : MonoBehaviour
 {
+    public GameObject winText;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class EndPoint : MonoBehaviour
     {
         if (other.gameObject.tag == "ball")
         {
-            print("You win.");
+            winText.SetActive(true);
         }
     }
 }
