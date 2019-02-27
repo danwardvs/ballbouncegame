@@ -12,13 +12,22 @@ public class WinTextScript : MonoBehaviour
     }
     void OnMouseDown()
     {
+        // Shhh...
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             SceneManager.LoadScene(2, LoadSceneMode.Single);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            SceneManager.LoadScene(3, LoadSceneMode.Single);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            SceneManager.LoadScene(4, LoadSceneMode.Single);
         }
     }
 

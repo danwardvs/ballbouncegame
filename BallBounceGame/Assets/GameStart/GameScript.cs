@@ -27,6 +27,7 @@ public class GameScript : MonoBehaviour
         //Set the GameObject's Color quickly to a set Color (blue)
         m_SpriteRenderer.color = Color.green;
 
+        // Snag a reference to the arrow for later use
         arrowObject = GameObject.Find("arrow");
 
 
@@ -82,7 +83,7 @@ public class GameScript : MonoBehaviour
 
             // Set visual cues
             m_SpriteRenderer.color = Color.red;
-            arrowObject.active = true;
+            arrowObject.SetActive(true);
 
 
         }
@@ -90,7 +91,7 @@ public class GameScript : MonoBehaviour
         {
             // Reset visual cues
             m_SpriteRenderer.color = Color.green;
-            arrowObject.active = false;
+            arrowObject.SetActive(false);
 
         }
     }
