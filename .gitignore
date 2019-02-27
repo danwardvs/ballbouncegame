@@ -7,10 +7,10 @@
 */Assets/AssetStoreTools*
 
 # Android build data
-*/.gradle/*
+.gradle/*
 
 # Editor version number
-*/BallBounceGame/ProjectSettings/ProjectVersion.txt
+BallBounceGame/ProjectSettings/ProjectVersion.txt
 
 
 
