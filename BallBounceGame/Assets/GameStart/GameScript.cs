@@ -14,7 +14,6 @@ public class GameScript : MonoBehaviour
     SpriteRenderer m_SpriteRenderer;
 
     Text gameText;
-    Text angleText;
 
     // Variables for the click and drag
     bool is_clicked = false;
@@ -26,10 +25,8 @@ public class GameScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Grab 
+        //Grab a reference to the sprite renderer so we can manipulate the colour later on
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        //Set the GameObject's Color quickly to a set Color (blue)
-        m_SpriteRenderer.color = Color.green;
 
         // Snag a reference to the arrow for later use
         arrowObject = GameObject.Find("arrow");
@@ -37,14 +34,12 @@ public class GameScript : MonoBehaviour
         // The text object that should be included with every level
         gameText = GameObject.Find("ShotText").GetComponent<Text>();
 
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        // Update mouse location, this is used later on in the update loop
         Vector2 mouse_location = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         
 
@@ -67,14 +62,12 @@ public class GameScript : MonoBehaviour
             if (is_clicked)
             {
                 // If game start object was being clicked and dragged, spawn a game ball
-
                 GameBallInstance = Instantiate(GameBallPrefab, transform);
                 GameBallInstance.GetComponent<Rigidbody2D>().AddForce(new_force * 100);
             }
+
             is_clicked = false;
-    
-            
-            
+
         }
         if (is_clicked)
         {
@@ -98,6 +91,7 @@ public class GameScript : MonoBehaviour
             arrowObject.SetActive(true);
             gameText.enabled = true;
 
+            // Update GUI to reflect the current shot vector
             gameText.text = "Power:" + new_force.magnitude.ToString("#.#") + "\nAngle:" + new_angle.ToString("#");
 
 
