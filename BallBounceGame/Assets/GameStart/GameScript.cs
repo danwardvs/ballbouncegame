@@ -74,19 +74,27 @@ public class GameScript : MonoBehaviour
             // Calculate a force based on mouse location and game start object position
             new_force = new Vector2(transform.position.x, transform.position.y) - mouse_location;
 
-            // We use MATH and FUNCTIONS to find angles
-            float new_angle = 90 + -57 * Mathf.Atan2(new_force.x, new_force.y);
-
-            // Set the rotation of the arrow to show current trajectory of ball
-            arrowObject.transform.eulerAngles = new Vector3(0, 0, new_angle);
-
             // Limit power to abritary value given here
             float max_force = 7;
 
             if (new_force.magnitude > max_force)
                 new_force = new_force * (max_force / new_force.magnitude);
 
-            // Set visual cues
+            // We use MATH and FUNCTIONS to find angles
+            float new_angle = 90 + -57 * Mathf.Atan2(new_force.x, new_force.y);
+
+            // Set the rotation of the arrow to show current trajectory of ball
+            arrowObject.transform.eulerAngles = new Vector3(0, 0, new_angle);
+
+            // Set scale of arrow to show power
+            float min_scale = 0.3f;
+            float scale_rate = 0.15f;
+            arrowObject.transform.localScale = new Vector2(min_scale + new_force.magnitude*scale_rate, min_scale + new_force.magnitude*scale_rate);
+
+            // Set colour of arrow to show power
+            arrowObject.GetComponent<SpriteRenderer>().color = new Color((1f/7f) * new_force.magnitude,1f - (1f / 7f) * new_force.magnitude, 0f);
+
+            // Set visual cues on the base object (triangle)
             m_SpriteRenderer.color = Color.red;
             arrowObject.SetActive(true);
             gameText.enabled = true;
