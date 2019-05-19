@@ -26,7 +26,6 @@ public class GameGUIscript : MonoBehaviour
     }
     public void FinishLevel()
     {
-        print("level is doneeee");
         RestartButton.SetActive(false);
         EndGamePanel.SetActive(true);
 

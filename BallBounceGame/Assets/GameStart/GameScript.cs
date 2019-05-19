@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameScript : MonoBehaviour
 {
@@ -48,20 +49,26 @@ public class GameScript : MonoBehaviour
             // Update mouse location, this is used later on in the update loop
             Vector2 mouse_location = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
 
-
-            if (Input.GetMouseButtonDown(0))
+            // Check if a touch has happened
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
+                // Ignore touch if pressing on a UI element
+                if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+                {
+                    is_clicked = true;
+                }
+            }
 
-                // Hitbox for location of game start object, (currently is triangle)
-                float width = 20;
-                float height = 20;
+            // Check if a mouse click has happened
+            else if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
 
-
-                // Simple AABB collision for clicking on the game start object
-                is_clicked = (mouse_location.x > transform.position.x - width / 2 && mouse_location.x < transform.position.x + width / 2
-                    && mouse_location.y > transform.position.y - height / 2 && mouse_location.y < transform.position.y + height / 2);
+            {
+                is_clicked = true;
 
             }
+
+
+
             // Handles left click being released
             if (Input.GetMouseButtonUp(0))
             {
