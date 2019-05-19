@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class GameGUIscript : MonoBehaviour
 {
     GameObject RestartButton;
-    GameObject NextLevel;
-    GameObject EndGameRestart;
+    GameObject EndGamePanel;
+
 
     void restartLevel()
     {
@@ -28,8 +28,7 @@ public class GameGUIscript : MonoBehaviour
     {
         print("level is doneeee");
         RestartButton.SetActive(false);
-        NextLevel.SetActive(true);
-        EndGameRestart.SetActive(true);
+        EndGamePanel.SetActive(true);
 
 
 
@@ -60,13 +59,12 @@ public class GameGUIscript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print("starti boi");
+
         RestartButton = GameObject.Find("GameGUI/RestartButton");
-        NextLevel = GameObject.Find("GameGUI/NextLevel");
-        EndGameRestart = GameObject.Find("GameGUI/EndGameRestart");
-        print(NextLevel);
-        NextLevel.SetActive(false);
-        EndGameRestart.SetActive(false);
+        EndGamePanel = GameObject.Find("GameGUI/EndGamePanel");
+
+
+        EndGamePanel.SetActive(false);
 
     }
 
