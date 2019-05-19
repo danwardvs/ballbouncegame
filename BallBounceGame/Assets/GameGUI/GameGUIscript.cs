@@ -37,23 +37,12 @@ public class GameGUIscript : MonoBehaviour
     public void LoadNextLevel()
     {
 
-        // Shhh...
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        // Loads next available level (current max of 5)
+        if( SceneManager.GetActiveScene().buildIndex < 5)
         {
-            SceneManager.LoadScene(1, LoadSceneMode.Single);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            SceneManager.LoadScene(2, LoadSceneMode.Single);
-        }
-        else if (SceneManager.GetActiveScene().buildIndex == 2)
-        {
-            SceneManager.LoadScene(3, LoadSceneMode.Single);
-        }
-        else if (SceneManager.GetActiveScene().buildIndex == 3)
-        {
-            SceneManager.LoadScene(4, LoadSceneMode.Single);
-        }
+       
     }
     // Start is called before the first frame update
     void Start()
