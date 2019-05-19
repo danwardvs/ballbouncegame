@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EndPoint : MonoBehaviour
 {
-    public GameObject winText;
+    GameObject GameGUI;
     // Start is called before the first frame update
     void Start()
     {
-       
+        GameGUI = GameObject.Find("GameGUI");
     }
 
     // Update is called once per frame
@@ -27,7 +27,8 @@ public class EndPoint : MonoBehaviour
     {
         if (other.gameObject.tag == "ball")
         {
-            winText.SetActive(true);
+            GameGUI.GetComponent<GameGUIscript>().FinishLevel();
+
         }
     }
 }
