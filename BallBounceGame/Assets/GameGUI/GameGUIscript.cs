@@ -38,7 +38,7 @@ public class GameGUIscript : MonoBehaviour
     {
 
         // Loads next available level (current max of 5)
-        if( SceneManager.GetActiveScene().buildIndex < 5)
+        if( SceneManager.GetActiveScene().buildIndex < 4)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
         }
