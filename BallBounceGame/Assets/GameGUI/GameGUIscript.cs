@@ -8,12 +8,14 @@ public class GameGUIscript : MonoBehaviour
 {
     GameObject RestartButton;
     GameObject EndGamePanel;
+    GameObject PauseMenu;
 
 
     void restartLevel()
     {
         Scene current_scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(current_scene.name);
+        Time.timeScale = 1f;
 
 
 
@@ -38,21 +40,42 @@ public class GameGUIscript : MonoBehaviour
     {
 
         // Loads next available level (current max of 5)
-        if( SceneManager.GetActiveScene().buildIndex < 4)
+        if( SceneManager.GetActiveScene().buildIndex < 5)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
         }
        
     }
+    public void ReturnToTitle()
+    {
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
+    }
+
+    public void PauseGame()
+    {
+        PauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+
+    }
+
+    public void UnpauseGame()
+    {
+        PauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
 
         RestartButton = GameObject.Find("GameGUI/RestartButton");
         EndGamePanel = GameObject.Find("GameGUI/EndGamePanel");
+        PauseMenu = GameObject.Find("GameGUI/PauseMenu");
+
 
 
         EndGamePanel.SetActive(false);
+        PauseMenu.SetActive(false);
 
     }
 
