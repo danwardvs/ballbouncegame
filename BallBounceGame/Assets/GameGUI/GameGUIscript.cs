@@ -67,7 +67,7 @@ public class GameGUIscript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Time.timeScale = 1f;
         RestartButton = GameObject.Find("GameGUI/RestartButton");
         EndGamePanel = GameObject.Find("GameGUI/EndGamePanel");
         PauseMenu = GameObject.Find("GameGUI/PauseMenu");
