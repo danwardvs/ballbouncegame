@@ -15,6 +15,10 @@ public class TitleScreenScript : MonoBehaviour
     {
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
     // Update is called once per frame
     void Update()
