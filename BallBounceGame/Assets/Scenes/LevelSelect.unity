@@ -190,12 +190,12 @@ PrefabInstance:
     - target: {fileID: 7191924201803040059, guid: f9ec2b68dc7bf504880b21a93a1b6afa,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0000038147
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7191924201803040059, guid: f9ec2b68dc7bf504880b21a93a1b6afa,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 174
+      value: -89.3
       objectReference: {fileID: 0}
     - target: {fileID: 7191924201803040059, guid: f9ec2b68dc7bf504880b21a93a1b6afa,
         type: 3}
@@ -205,7 +205,7 @@ PrefabInstance:
     - target: {fileID: 7191924201803040059, guid: f9ec2b68dc7bf504880b21a93a1b6afa,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80.7
+      value: 98.70001
       objectReference: {fileID: 0}
     - target: {fileID: 7191924201803040059, guid: f9ec2b68dc7bf504880b21a93a1b6afa,
         type: 3}
@@ -215,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 7191924201803040059, guid: f9ec2b68dc7bf504880b21a93a1b6afa,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7191924201803040059, guid: f9ec2b68dc7bf504880b21a93a1b6afa,
         type: 3}
@@ -225,7 +225,7 @@ PrefabInstance:
     - target: {fileID: 7191924201803040059, guid: f9ec2b68dc7bf504880b21a93a1b6afa,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7191924201803040059, guid: f9ec2b68dc7bf504880b21a93a1b6afa,
         type: 3}
@@ -431,8 +431,8 @@ Canvas:
   m_GameObject: {fileID: 950063329}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 535315164}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b1dee53264ecf4bb7d46efe2aa7ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrefab: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+  ButtonPrefab: {fileID: 1633340122510184453, guid: aa5b5e8747fffbc4eb88f428f962e137,
     type: 3}
 --- !u!1 &1257723370
 GameObject:
