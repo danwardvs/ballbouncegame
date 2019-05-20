@@ -1,46 +1,36 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameGUIscript : MonoBehaviour
 {
-    GameObject RestartButton;
-    GameObject EndGamePanel;
-    GameObject PauseMenu;
+    public GameObject MenuButton;
+    public GameObject EndGameMenu;
+    public GameObject PauseMenu;
 
 
-    void restartLevel()
+    void RestartLevel()
     {
         Scene current_scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(current_scene.name);
         Time.timeScale = 1f;
-
-
-
     }
 
     public void RestartButtonClicked()
     {
-        restartLevel();
-
+        RestartLevel();
     }
+
     public void FinishLevel()
     {
-        RestartButton.SetActive(false);
-        EndGamePanel.SetActive(true);
-
-
-
-
+        MenuButton.SetActive(false);
+        EndGameMenu.SetActive(true);
     }
 
     public void LoadNextLevel()
     {
 
         // Loads next available level (current max of 5)
-        if( SceneManager.GetActiveScene().buildIndex < 5)
+        if( SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
         }
@@ -55,7 +45,6 @@ public class GameGUIscript : MonoBehaviour
     {
         PauseMenu.SetActive(true);
         Time.timeScale = 0f;
-
     }
 
     public void UnpauseGame()
@@ -68,15 +57,8 @@ public class GameGUIscript : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
-        RestartButton = GameObject.Find("GameGUI/RestartButton");
-        EndGamePanel = GameObject.Find("GameGUI/EndGamePanel");
-        PauseMenu = GameObject.Find("GameGUI/PauseMenu");
-
-
-
-        EndGamePanel.SetActive(false);
+        EndGameMenu.SetActive(false);
         PauseMenu.SetActive(false);
-
     }
 
     // Update is called once per frame
@@ -84,8 +66,7 @@ public class GameGUIscript : MonoBehaviour
     {
         if (Input.GetKeyDown("r")) 
         {
-            restartLevel();
+            RestartLevel();
         }
-        
     }
 }
