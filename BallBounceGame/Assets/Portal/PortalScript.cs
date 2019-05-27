@@ -49,8 +49,11 @@ public class PortalScript : MonoBehaviour
             float z = sibling_portal.transform.rotation.eulerAngles.z;
             float m = rb.velocity.magnitude;
             print(z);
+            print(m);
 
-            Vector3 v = new Vector3(Mathf.Sin(z*(Mathf.PI)/180) * m, Mathf.Cos(z*(Mathf.PI) / 180) * m, 0);
+            z = z + 90;
+
+            Vector3 v = new Vector3(Mathf.Cos(z*Mathf.Deg2Rad) * m, Mathf.Sin(z*Mathf.Deg2Rad) * m, 0);
 
             print(v);
 
