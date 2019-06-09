@@ -62,7 +62,7 @@ public class PortalScript : MonoBehaviour
             float colliding_ball_speed = colliding_ball_rb.velocity.magnitude;
 
             // Add 90 degrees because the portals are pointing up at their 0 degrees
-            new_angle =+ 90;
+            new_angle += 90;
 
             // Using some trig, we find the new velocity for the ball
             Vector3 new_velocity = new Vector3(Mathf.Cos(new_angle*Mathf.Deg2Rad) * colliding_ball_speed, Mathf.Sin(new_angle*Mathf.Deg2Rad) * colliding_ball_speed, 0);
