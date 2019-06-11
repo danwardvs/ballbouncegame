@@ -2,23 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This allows us to see the changes made by the colour choice in the editor
+[ExecuteInEditMode]
+
 public class PortalScript : MonoBehaviour
 {
     GameObject sibling_portal_collider;
     GameObject sibling_portal;
-
-
+    Color portal_colour;
 
     // Start is called before the first frame update
 
-
+    
     void Start()
     {
-        // Find the sibling portal
+        
+        // Get the colour that is set by a public variable by the parent
+        portal_colour = gameObject.transform.parent.GetComponent<PortalParentScript>().portal_colour;
+        //portal_colour = Color.red;
+        this.transform.Find("Inner").GetComponent<SpriteRenderer>().color = portal_colour;
+
+        // Find the sibling portal and store a reference for teleportation of the ball
+
         if (gameObject.name == "Portal_1")
         {
             sibling_portal = gameObject.transform.parent.Find("Portal_2").gameObject;
-            sibling_portal_collider = gameObject.transform.parent.Find("Portal_2/Collider").gameObject;
+            sibling_portal_collider = gameObject.transform.parent.Find("Portal_2/Inner").gameObject;
 
 
 
@@ -26,7 +35,7 @@ public class PortalScript : MonoBehaviour
         else
         {
             sibling_portal = gameObject.transform.parent.Find("Portal_1").gameObject;
-            sibling_portal_collider = gameObject.transform.parent.Find("Portal_1/Collider").gameObject;
+            sibling_portal_collider = gameObject.transform.parent.Find("Portal_1/Inner").gameObject;
 
         }
 
@@ -42,24 +51,25 @@ public class PortalScript : MonoBehaviour
     {
         if (other.gameObject.tag == "ball")
         {
-            Rigidbody2D rb = other.gameObject.GetComponent<Rigidbody2D>();
+            // Get reference to the ball that collides with the portal
+            Rigidbody2D colliding_ball_rb = other.gameObject.GetComponent<Rigidbody2D>();
+
+            // Teleport the ball to the sibling portal
             other.gameObject.transform.position = sibling_portal_collider.transform.position;
-            //rb.velocity = transform.up * rb.velocity.magnitude;
 
-            float z = sibling_portal.transform.rotation.eulerAngles.z;
-            float m = rb.velocity.magnitude;
-            print(z);
-            print(m);
+            // Find our angle and magnitude of velocity
+            float new_angle = sibling_portal.transform.rotation.eulerAngles.z;
+            float colliding_ball_speed = colliding_ball_rb.velocity.magnitude;
 
-            z = z + 90;
+            // Add 90 degrees because the portals are pointing up at their 0 degrees
+            new_angle += 90;
 
-            Vector3 v = new Vector3(Mathf.Cos(z*Mathf.Deg2Rad) * m, Mathf.Sin(z*Mathf.Deg2Rad) * m, 0);
-
-            print(v);
+            // Using some trig, we find the new velocity for the ball
+            Vector3 new_velocity = new Vector3(Mathf.Cos(new_angle*Mathf.Deg2Rad) * colliding_ball_speed, Mathf.Sin(new_angle*Mathf.Deg2Rad) * colliding_ball_speed, 0);
 
 
-
-            rb.velocity = v;
+            // Give the ball the newly calculated velocity
+            colliding_ball_rb.velocity = new_velocity;
 
         }
     }
