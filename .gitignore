@@ -5,6 +5,7 @@
 */[Bb]uild/*
 */[Bb]uilds/*
 */[Ll]ogs/*
+*/Packages/manifest.json
 */Assets/AssetStoreTools*
 
 # Android build data
@@ -34,6 +35,7 @@ ExportedObj/
 *.svd
 *.pdb
 *.opendb
+*.vscode
 *.VC.db
 
 # Unity3D generated meta files
