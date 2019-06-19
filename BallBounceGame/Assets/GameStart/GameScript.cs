@@ -119,8 +119,9 @@ public class GameScript : MonoBehaviour
                 float scale_rate = 0.15f;
                 arrowObject.transform.localScale = new Vector2(min_scale + new_force.magnitude * scale_rate, min_scale + new_force.magnitude * scale_rate);
 
-                float scale_2 = 4f; // Scale 2: Electric Boogaloo
-                DistanceIndicator.transform.localScale = new Vector2(new_force.magnitude*scale_2,new_force.magnitude*scale_2);
+                // Properly scale the image to match the mouse location
+                float distance_scale = 0.2f; 
+                DistanceIndicator.transform.localScale = new Vector2(new_force.magnitude*distance_scale,new_force.magnitude*distance_scale);
 
 
                 // Set colour of arrow to show power
