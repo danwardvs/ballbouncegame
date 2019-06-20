@@ -21,6 +21,7 @@ public class GameScript : MonoBehaviour
     // Variables for the click and drag
     bool is_clicked = false;
     bool level_finish = false;
+    bool invert_controls = true;
     Vector2 new_force;
     Vector2 mouse_location;
     Vector2 initial_click;
@@ -56,6 +57,11 @@ public class GameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Little thing to test out inverted control scheme
+        if(Input.GetKeyDown("space")){
+            invert_controls=!invert_controls;
+        }
+
         if (!level_finish)
         {
             // Update mouse location, this is used later on in the update loop
@@ -101,6 +107,10 @@ public class GameScript : MonoBehaviour
             {
                 // Calculate a force based on mouse location and game start object position
                 new_force = new Vector2(initial_click.x, initial_click.y) - mouse_location;
+
+                if(invert_controls){
+                    new_force = new_force*-1;
+                }
 
                 // Limit power to abritary value given here
                 float max_force = 7;
