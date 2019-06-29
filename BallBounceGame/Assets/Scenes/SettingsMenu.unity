@@ -336,6 +336,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 86104043}
     m_Modifications:
+    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_Name
+      value: MusicButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779883, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -456,21 +461,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8298238
       objectReference: {fileID: 0}
-    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_Name
-      value: MusicButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 43.8
-      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -516,6 +506,16 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 36
       objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 43.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 480ce7eb8f8b8b3418e27d36cbd609ef, type: 3}
 --- !u!224 &1023453823 stripped
@@ -531,6 +531,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 86104043}
     m_Modifications:
+    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_Name
+      value: ControlButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779883, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -651,21 +656,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8298754
       objectReference: {fileID: 0}
-    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_Name
-      value: ControlButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 43.8
-      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -705,6 +695,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: DIRECT
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828122, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 43.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.9162216
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 480ce7eb8f8b8b3418e27d36cbd609ef, type: 3}
@@ -875,6 +895,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 86104043}
     m_Modifications:
+    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_Name
+      value: SFXButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779883, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -995,21 +1020,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8298238
       objectReference: {fileID: 0}
-    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_Name
-      value: SFXButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 43.8
-      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1029,11 +1039,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 86104047}
     - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+      value: SFXButtonPressed
       objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
@@ -1054,6 +1064,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 43.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 480ce7eb8f8b8b3418e27d36cbd609ef, type: 3}
@@ -1093,7 +1113,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.5566038, g: 0.52772343, b: 0.52772343, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
