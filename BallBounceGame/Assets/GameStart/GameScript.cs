@@ -30,6 +30,7 @@ public class GameScript : MonoBehaviour
     {
         level_finish = newFinish;
     }
+
     void HandleClick(){
         is_clicked = true;
         initial_click = mouse_location;
@@ -80,15 +81,9 @@ public class GameScript : MonoBehaviour
 
             // Check if a mouse click has happened
             else if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
-
             {
                 HandleClick();
-
-
-
             }
-
-
 
             // Handles left click being released
             if (Input.GetMouseButtonUp(0))

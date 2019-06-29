@@ -5,16 +5,19 @@ using UnityEngine.UI;
 public class LevelSelectScript : MonoBehaviour
 {
     public GameObject ButtonPrefab;
-    int SceneStart = 2;
+
+    // Since the title screen, level select, and options screen come before
+    // the first levels in the build settings, the first actual level starts at scene number 3
+    const int LEVEL_START = 3;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Create buttons
-        PopulateButtons(CreatePanel(), SceneManager.sceneCountInBuildSettings - SceneStart);
+        // Create the correct amount of buttons based on the number of scenes in the build settings
+        PopulateButtons(CreatePanel(), SceneManager.sceneCountInBuildSettings - LEVEL_START);
     }
 
-    // Populate buttons
+    // Generates a 2D array of buttons in a given panel
     void PopulateButtons(GameObject panel, int num)
     {
         int row = 0;
@@ -22,10 +25,7 @@ public class LevelSelectScript : MonoBehaviour
 
         for (int i = 0; i < num; i++)
         {   
-            // Level
             int level = i + 1;
-
-            // Create button
             CreateButton(-270.0f + column * 60.0f, -50.0f - row * 60.0f, level, panel);
 
             // Next row
@@ -38,7 +38,7 @@ public class LevelSelectScript : MonoBehaviour
         }
     }
 
-    // Create button
+    // Creates button using a given parent 
     void CreateButton(float x, float y, int level, GameObject parent)
     {
         // Create new button and assign as child
@@ -50,7 +50,6 @@ public class LevelSelectScript : MonoBehaviour
         buttonTrans.anchorMin = new Vector2(0.5f, 1.0f);
         buttonTrans.anchorMax = new Vector2(0.5f, 1.0f);
 
-        // Text
         levelButton.GetComponentInChildren<Text>().text = (level).ToString();
 
         // Set on click
@@ -85,8 +84,7 @@ public class LevelSelectScript : MonoBehaviour
     // Load level
     public void LoadLevel(int newLevel)
     {
-        // Since the level select and title screen come before the game levels in the build level list, we add one to it
-        newLevel += SceneStart - 1;
+        newLevel += LEVEL_START - 1;
         SceneManager.LoadScene(newLevel, LoadSceneMode.Single);
     }
 
