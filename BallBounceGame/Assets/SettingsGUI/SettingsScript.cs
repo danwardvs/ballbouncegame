@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class SettingsScript : MonoBehaviour
 
@@ -33,19 +35,46 @@ public class SettingsScript : MonoBehaviour
         if(control_state){
             new_cb.normalColor = Color.red;
             new_cb.highlightedColor = new Color(1f,0.3f,0.3f);
-            new_text = "Inverted";
+            new_text = "INVERTED";
         }else{
             new_cb.normalColor = Color.blue;
             new_cb.highlightedColor = new Color(0.3f,0.3f,1f);
-            new_text = "Direct";
+            new_text = "DIRECT";
         }
 
         control_button.colors = new_cb;
         control_button.GetComponentInChildren<Text>().text = new_text;
 
     }
+    public void BackButtonPressed(){
 
-    public void SFXButtonPressed(){
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
+
+
+    }
+    public void MusicButtonPressed(){
+        music_enabled = !music_enabled;
+
+        ColorBlock new_cb = music_button.colors;
+        string new_text;
+
+
+        if(music_enabled){
+            new_cb.normalColor = Color.green;
+            new_cb.highlightedColor = new Color(0.3f,1f,0.3f);
+            new_text = "YES";
+        }else{
+            new_cb.normalColor = Color.red;
+            new_cb.highlightedColor = new Color(1f,0.3f,0.3f);
+            new_text = "MUTE";
+        }
+
+        music_button.colors = new_cb;
+        music_button.GetComponentInChildren<Text>().text = new_text;
+
+    }
+
+        public void SFXButtonPressed(){
         sfx_enabled = !sfx_enabled;
 
         ColorBlock new_cb = sfx_button.colors;
@@ -55,11 +84,11 @@ public class SettingsScript : MonoBehaviour
         if(sfx_enabled){
             new_cb.normalColor = Color.green;
             new_cb.highlightedColor = new Color(0.3f,1f,0.3f);
-            new_text = "Yes";
+            new_text = "YES";
         }else{
             new_cb.normalColor = Color.red;
             new_cb.highlightedColor = new Color(1f,0.3f,0.3f);
-            new_text = "Mute";
+            new_text = "MUTE";
         }
 
         sfx_button.colors = new_cb;
