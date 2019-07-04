@@ -20,10 +20,12 @@ public class SettingsScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Find references to the buttons for later use
         control_button = GameObject.Find("ControlButton").GetComponent<Button>();
         sfx_button = GameObject.Find("SFXButton").GetComponent<Button>();
         music_button = GameObject.Find("MusicButton").GetComponent<Button>();
         
+        // Load player settings from file and set the buttons accordlingly
         if(PlayerPrefs.GetInt("Control", 1)==0)
             ControlButtonPressed();
 
@@ -36,13 +38,13 @@ public class SettingsScript : MonoBehaviour
 
     }
     public void ControlButtonPressed(){
-        control_state = !control_state;
-        PlayerPrefs.SetInt("Control", control_state ? 1 : 0);
 
+        control_state = !control_state;
+
+        PlayerPrefs.SetInt("Control", control_state ? 1 : 0);
 
         ColorBlock new_cb = control_button.colors;
         string new_text;
-
 
         if(!control_state){
             new_cb.normalColor = Color.red;
@@ -60,19 +62,20 @@ public class SettingsScript : MonoBehaviour
     }
     public void BackButtonPressed(){
 
+        // Return to main menu and save settings
         PlayerPrefs.Save();
         SceneManager.LoadScene(0, LoadSceneMode.Single);
 
 
     }
     public void MusicButtonPressed(){
-        music_enabled = !music_enabled;
-        PlayerPrefs.SetInt("Music", music_enabled ? 1 : 0);
 
+        music_enabled = !music_enabled;
+
+        PlayerPrefs.SetInt("Music", music_enabled ? 1 : 0);
 
         ColorBlock new_cb = music_button.colors;
         string new_text;
-
 
         if(music_enabled){
             new_cb.normalColor = Color.green;
@@ -90,13 +93,13 @@ public class SettingsScript : MonoBehaviour
     }
 
     public void SFXButtonPressed(){
-        sfx_enabled = !sfx_enabled;
-        PlayerPrefs.SetInt("Sound", sfx_enabled ? 1 : 0);
 
+        sfx_enabled = !sfx_enabled;
+
+        PlayerPrefs.SetInt("Sound", sfx_enabled ? 1 : 0);
 
         ColorBlock new_cb = sfx_button.colors;
         string new_text;
-
 
         if(sfx_enabled){
             new_cb.normalColor = Color.green;
