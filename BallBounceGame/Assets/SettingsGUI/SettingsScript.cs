@@ -14,7 +14,7 @@ public class SettingsScript : MonoBehaviour
     Button sfx_button;
     Button music_button;
 
-    bool control_state = false;
+    bool control_state = true;
     bool sfx_enabled = true;
     bool music_enabled = true;
     // Start is called before the first frame update
@@ -23,16 +23,28 @@ public class SettingsScript : MonoBehaviour
         control_button = GameObject.Find("ControlButton").GetComponent<Button>();
         sfx_button = GameObject.Find("SFXButton").GetComponent<Button>();
         music_button = GameObject.Find("MusicButton").GetComponent<Button>();
+        
+        if(PlayerPrefs.GetInt("Control", 1)==0)
+            ControlButtonPressed();
+
+        if(PlayerPrefs.GetInt("Music", 1)==0)
+            MusicButtonPressed();
+        
+        if(PlayerPrefs.GetInt("Sound", 1)==0)
+            SFXButtonPressed();
+        
 
     }
     public void ControlButtonPressed(){
         control_state = !control_state;
+        PlayerPrefs.SetInt("Control", control_state ? 1 : 0);
+
 
         ColorBlock new_cb = control_button.colors;
         string new_text;
 
 
-        if(control_state){
+        if(!control_state){
             new_cb.normalColor = Color.red;
             new_cb.highlightedColor = new Color(1f,0.3f,0.3f);
             new_text = "INVERTED";
@@ -48,12 +60,15 @@ public class SettingsScript : MonoBehaviour
     }
     public void BackButtonPressed(){
 
+        PlayerPrefs.Save();
         SceneManager.LoadScene(0, LoadSceneMode.Single);
 
 
     }
     public void MusicButtonPressed(){
         music_enabled = !music_enabled;
+        PlayerPrefs.SetInt("Music", music_enabled ? 1 : 0);
+
 
         ColorBlock new_cb = music_button.colors;
         string new_text;
@@ -74,8 +89,10 @@ public class SettingsScript : MonoBehaviour
 
     }
 
-        public void SFXButtonPressed(){
+    public void SFXButtonPressed(){
         sfx_enabled = !sfx_enabled;
+        PlayerPrefs.SetInt("Sound", sfx_enabled ? 1 : 0);
+
 
         ColorBlock new_cb = sfx_button.colors;
         string new_text;
