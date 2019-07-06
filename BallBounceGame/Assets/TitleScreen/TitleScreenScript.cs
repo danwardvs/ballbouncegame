@@ -19,6 +19,10 @@ public class TitleScreenScript : MonoBehaviour
     {
         Application.Quit();
     }
+    public void OpenSettings(){
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
+
+    }
 
     // Update is called once per frame
     void Update()

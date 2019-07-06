@@ -21,7 +21,7 @@ public class GameScript : MonoBehaviour
     // Variables for the click and drag
     bool is_clicked = false;
     bool level_finish = false;
-    bool invert_controls = true;
+    bool invert_controls = false;
     Vector2 new_force;
     Vector2 mouse_location;
     Vector2 initial_click;
@@ -30,6 +30,7 @@ public class GameScript : MonoBehaviour
     {
         level_finish = newFinish;
     }
+
     void HandleClick(){
         is_clicked = true;
         initial_click = mouse_location;
@@ -40,7 +41,13 @@ public class GameScript : MonoBehaviour
     
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+
+        // Load inverted controls from PlayerPrefs, which is stored in a local
+        // file and is set by the settings menu. 
+        if(PlayerPrefs.GetInt("Control", 1)==0){
+            invert_controls = true;
+        }
         //Grab a reference to the sprite renderer so we can manipulate the colour later on
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -80,15 +87,9 @@ public class GameScript : MonoBehaviour
 
             // Check if a mouse click has happened
             else if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
-
             {
                 HandleClick();
-
-
-
             }
-
-
 
             // Handles left click being released
             if (Input.GetMouseButtonUp(0))
@@ -108,7 +109,7 @@ public class GameScript : MonoBehaviour
                 // Calculate a force based on mouse location and game start object position
                 new_force = new Vector2(initial_click.x, initial_click.y) - mouse_location;
 
-                if(invert_controls){
+                if(!invert_controls){
                     new_force = new_force*-1;
                 }
 
