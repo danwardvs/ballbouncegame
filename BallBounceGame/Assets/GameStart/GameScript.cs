@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+
 
 public class GameScript : MonoBehaviour
 {
@@ -27,7 +29,16 @@ public class GameScript : MonoBehaviour
     Vector2 initial_click;
     
     public void SetLevelFinish(bool newFinish)
-    {
+    {   
+        // Write progress to file
+        if(!level_finish){
+            int level_num = SceneManager.GetActiveScene().buildIndex - 2;
+            PlayerPrefs.SetInt("Level_" + level_num.ToString(), 1);
+            print("Level_" + level_num.ToString());
+            PlayerPrefs.Save();
+
+        }
+
         level_finish = newFinish;
     }
 
