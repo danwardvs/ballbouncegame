@@ -166,7 +166,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 68347048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 74ca19cf2583995458b7c32ec4aed0af, type: 3}
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 86104042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 86104042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
@@ -325,11 +325,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 86104043}
     m_Modifications:
-    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_Name
-      value: BackButton
-      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779883, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -450,6 +445,36 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.6552004
       objectReference: {fileID: 0}
+    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_Name
+      value: BackButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 43.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.9162216
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -495,31 +520,6 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 36
       objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 43.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.9162216
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 480ce7eb8f8b8b3418e27d36cbd609ef, type: 3}
 --- !u!224 &482054257 stripped
@@ -547,11 +547,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 86104043}
     m_Modifications:
-    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_Name
-      value: MusicButton
-      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779883, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -672,6 +667,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8298238
       objectReference: {fileID: 0}
+    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_Name
+      value: MusicButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 43.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -747,16 +757,6 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 36
       objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 43.8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 480ce7eb8f8b8b3418e27d36cbd609ef, type: 3}
 --- !u!224 &1023453823 stripped
@@ -772,11 +772,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 86104043}
     m_Modifications:
-    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_Name
-      value: ControlButton
-      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779883, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -897,6 +892,36 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8298754
       objectReference: {fileID: 0}
+    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_Name
+      value: ControlButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 43.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.9162216
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -932,6 +957,31 @@ PrefabInstance:
       propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6469610925921828122, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_Text
@@ -941,31 +991,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 43.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.9162216
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 480ce7eb8f8b8b3418e27d36cbd609ef, type: 3}
@@ -1015,7 +1040,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1185127229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1024,7 +1049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 74ca19cf2583995458b7c32ec4aed0af, type: 3}
@@ -1096,7 +1121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1518323051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1105,7 +1130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 74ca19cf2583995458b7c32ec4aed0af, type: 3}
@@ -1136,11 +1161,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 86104043}
     m_Modifications:
-    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_Name
-      value: SFXButton
-      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779883, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1261,6 +1281,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8298238
       objectReference: {fileID: 0}
+    - target: {fileID: 6469610927111779880, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_Name
+      value: SFXButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 43.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6469610927111779882, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1335,16 +1370,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469610925921828123, guid: 480ce7eb8f8b8b3418e27d36cbd609ef,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 43.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 480ce7eb8f8b8b3418e27d36cbd609ef, type: 3}
@@ -1479,7 +1504,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1678368880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1488,7 +1513,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 74ca19cf2583995458b7c32ec4aed0af, type: 3}
@@ -1539,7 +1564,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1851890391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
@@ -1558,7 +1583,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1851890391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
