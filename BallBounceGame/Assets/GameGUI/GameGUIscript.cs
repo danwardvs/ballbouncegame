@@ -7,7 +7,7 @@ public class GameGUIscript : MonoBehaviour
     public GameObject MenuButton;
     public GameObject EndGameMenu;
     public GameObject PauseMenu;
-    public GameScript gameScriptRef;
+    GameScript gameScriptRef;
 
 
     Text ScoreText;
@@ -30,7 +30,7 @@ public class GameGUIscript : MonoBehaviour
         MenuButton.SetActive(false);
         EndGameMenu.SetActive(true);
         Vector2 stats = gameScriptRef.getStats();
-        ScoreText.text = "TIME:" + stats.x.ToString() + "\nBALLS:" + stats.y.ToString();
+        ScoreText.text = "TIME: " + stats.x.ToString("F2") + "\nBALLS: " + stats.y.ToString();
 
     }
 
@@ -68,6 +68,9 @@ public class GameGUIscript : MonoBehaviour
         EndGameMenu.SetActive(false);
         PauseMenu.SetActive(false);
         ScoreText = transform.Find("EndGameMenu/ScoreText").GetComponent<Text>();
+       
+        // Get reference to main game script to pull stats from later in the endgame screen
+        gameScriptRef = GameObject.Find("GameStart").GetComponent<GameScript>();
 
 
 
