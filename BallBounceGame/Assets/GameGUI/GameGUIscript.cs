@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameGUIscript : MonoBehaviour
@@ -6,6 +7,10 @@ public class GameGUIscript : MonoBehaviour
     public GameObject MenuButton;
     public GameObject EndGameMenu;
     public GameObject PauseMenu;
+    public GameScript gameScriptRef;
+
+
+    Text ScoreText;
 
 
     void RestartLevel()
@@ -24,6 +29,9 @@ public class GameGUIscript : MonoBehaviour
     {
         MenuButton.SetActive(false);
         EndGameMenu.SetActive(true);
+        Vector2 stats = gameScriptRef.getStats();
+        ScoreText.text = "TIME:" + stats.x.ToString() + "\nBALLS:" + stats.y.ToString();
+
     }
 
     public void LoadNextLevel()
@@ -59,6 +67,10 @@ public class GameGUIscript : MonoBehaviour
         Time.timeScale = 1f;
         EndGameMenu.SetActive(false);
         PauseMenu.SetActive(false);
+        ScoreText = transform.Find("EndGameMenu/ScoreText").GetComponent<Text>();
+
+
+
     }
 
     // Update is called once per frame

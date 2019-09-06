@@ -14,13 +14,14 @@ public class GameScript : MonoBehaviour
     GameObject arrowObject;
     GameObject InitialClickIndicator;
     GameObject DistanceIndicator;
-    GameObject scoreText;
 
     // We store a reference to this so we can change colour without re-getting the object
     SpriteRenderer m_SpriteRenderer;
 
     Text gameText;
     float gameTimer = 0;
+    float finishTime = 0;
+    int ball_count = 0;
 
     // Variables for the click and drag
     bool is_clicked = false;
@@ -30,6 +31,12 @@ public class GameScript : MonoBehaviour
     Vector2 mouse_location;
     Vector2 initial_click;
     
+    public Vector2 getStats()
+    {   
+
+        return new Vector2(finishTime, ball_count);
+    }
+
     public void SetLevelFinish(bool newFinish)
     {   
         // Write progress to file
@@ -40,7 +47,6 @@ public class GameScript : MonoBehaviour
             PlayerPrefs.Save();
 
         }
-
         level_finish = newFinish;
     }
 
@@ -70,7 +76,6 @@ public class GameScript : MonoBehaviour
         arrowObject = GameObject.Find("arrow");
         InitialClickIndicator = GameObject.Find("InitialTouch");
         DistanceIndicator = GameObject.Find("DistanceIndicator");
-        scoreText = GameObject.Find("ScoreText");
 
 
 
@@ -81,7 +86,7 @@ public class GameScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         // Little thing to test out inverted control scheme
         if(Input.GetKeyDown("space")){
             invert_controls=!invert_controls;
@@ -89,6 +94,9 @@ public class GameScript : MonoBehaviour
 
         if (!level_finish)
         {
+            // Update the timer so the EndgameGUI can grab it for the stats displayed
+            finishTime = Time.time - gameTimer;
+
             // Update mouse location, this is used later on in the update loop
             mouse_location = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
 
@@ -117,6 +125,9 @@ public class GameScript : MonoBehaviour
                     // If game start object was being clicked and dragged, spawn a game ball
                     GameBallInstance = Instantiate(GameBallPrefab, transform);
                     GameBallInstance.GetComponent<Rigidbody2D>().AddForce(new_force * 100);
+
+                    // Add one to our count for endgame stats
+                    ball_count++;
                 }
 
                 is_clicked = false;
@@ -182,6 +193,7 @@ public class GameScript : MonoBehaviour
 
             }
         }
+        // If level is finished
         else
         {
             arrowObject.SetActive(false);
