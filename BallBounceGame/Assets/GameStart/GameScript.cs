@@ -14,11 +14,13 @@ public class GameScript : MonoBehaviour
     GameObject arrowObject;
     GameObject InitialClickIndicator;
     GameObject DistanceIndicator;
+    GameObject scoreText;
 
     // We store a reference to this so we can change colour without re-getting the object
     SpriteRenderer m_SpriteRenderer;
 
     Text gameText;
+    float gameTimer = 0;
 
     // Variables for the click and drag
     bool is_clicked = false;
@@ -52,7 +54,9 @@ public class GameScript : MonoBehaviour
     
     // Start is called before the first frame update
     void Start()
-    {   
+    {
+        // Start the game timer
+        gameTimer = Time.time;
 
         // Load inverted controls from PlayerPrefs, which is stored in a local
         // file and is set by the settings menu. 
@@ -66,6 +70,9 @@ public class GameScript : MonoBehaviour
         arrowObject = GameObject.Find("arrow");
         InitialClickIndicator = GameObject.Find("InitialTouch");
         DistanceIndicator = GameObject.Find("DistanceIndicator");
+        scoreText = GameObject.Find("ScoreText");
+
+
 
         // The text object that should be included with every level
         gameText = GameObject.Find("ShotText").GetComponent<Text>();
