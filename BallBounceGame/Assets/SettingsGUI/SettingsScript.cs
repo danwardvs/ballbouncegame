@@ -13,10 +13,13 @@ public class SettingsScript : MonoBehaviour
     Button control_button;
     Button sfx_button;
     Button music_button;
+    Button debug_draw_button;
 
     bool control_state = true;
     bool sfx_enabled = true;
     bool music_enabled = true;
+    bool debug_draw = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,8 @@ public class SettingsScript : MonoBehaviour
         control_button = GameObject.Find("ControlButton").GetComponent<Button>();
         sfx_button = GameObject.Find("SFXButton").GetComponent<Button>();
         music_button = GameObject.Find("MusicButton").GetComponent<Button>();
+        debug_draw_button = GameObject.Find("DebugDrawButton").GetComponent<Button>();
+
 
         // Load player settings from file and set the buttons accordlingly
         if (PlayerPrefs.GetInt("Control", 1) == 0)
@@ -34,6 +39,9 @@ public class SettingsScript : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Sound", 1) == 0)
             SFXButtonPressed();
+
+        if (PlayerPrefs.GetInt("DebugDraw", 1) == 0)
+            DebugDrawButtonPressed();
 
 
     }
@@ -47,6 +55,15 @@ public class SettingsScript : MonoBehaviour
 
 
     }
+    public void DebugDrawButtonPressed(){
+        debug_draw = !debug_draw;
+
+        PlayerPrefs.SetInt("DebugDraw", debug_draw ? 1 : 0);
+        ToggleButton(debug_draw_button, debug_draw, new string[] { "YES", "NO" });
+
+
+    }
+
     public void BackButtonPressed()
     {
 
