@@ -14,11 +14,15 @@ public class SettingsScript : MonoBehaviour
     Button sfx_button;
     Button music_button;
     Button debug_draw_button;
+    Button fps_lock_button;
 
     bool control_state = true;
     bool sfx_enabled = true;
     bool music_enabled = true;
     bool debug_draw = true;
+    int fps_lock = 60;
+    int[] fps_list = { 30, 60, 120, 144, 1000 };
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,7 @@ public class SettingsScript : MonoBehaviour
         sfx_button = GameObject.Find("SFXButton").GetComponent<Button>();
         music_button = GameObject.Find("MusicButton").GetComponent<Button>();
         debug_draw_button = GameObject.Find("DebugDrawButton").GetComponent<Button>();
+        fps_lock_button = GameObject.Find("FPSLockButton").GetComponent<Button>();
 
 
         // Load player settings from file and set the buttons accordlingly
@@ -43,8 +48,51 @@ public class SettingsScript : MonoBehaviour
         if (PlayerPrefs.GetInt("DebugDraw", 1) == 0)
             DebugDrawButtonPressed();
 
+        fps_lock = PlayerPrefs.GetInt("FPSLock");
+
+        if (fps_lock == 1000)
+            fps_lock_button.GetComponentInChildren<Text>().text = "UNLOCKED";
+        else
+            fps_lock_button.GetComponentInChildren<Text>().text = fps_lock.ToString();
 
     }
+    public void FPSButtonPressed()
+    {
+  
+        // Handling cases of custom fps locks manually set in the config file
+        bool found = false;
+        for(int i=0; i<fps_list.GetLength(0); i++)
+        {
+            
+            if (fps_lock == fps_list[fps_list.GetLength(0)-1])
+            {
+                fps_lock = fps_list[0];
+                found = true;
+                break;
+            }
+            else if (fps_lock == fps_list[i])
+            {
+                fps_lock = fps_list[i + 1];
+                found = true;
+                break;
+
+            }
+
+        }
+        if (!found)
+        {
+            fps_lock = fps_list[0];
+        }
+
+        if (fps_lock == 1000)
+            fps_lock_button.GetComponentInChildren<Text>().text = "UNLOCKED";
+        else
+            fps_lock_button.GetComponentInChildren<Text>().text = fps_lock.ToString();
+
+        PlayerPrefs.SetInt("FPSLock", fps_lock);
+        Application.targetFrameRate = fps_lock;
+    }
+
     public void ControlButtonPressed()
     {
 
