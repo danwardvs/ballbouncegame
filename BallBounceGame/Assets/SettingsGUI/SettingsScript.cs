@@ -19,7 +19,7 @@ public class SettingsScript : MonoBehaviour
     bool control_state = true;
     bool sfx_enabled = true;
     bool music_enabled = true;
-    bool debug_draw = true;
+    bool debug_draw = false;
     int fps_lock = 60;
     int[] fps_list = { 30, 60, 120, 144, 1000 };
 
@@ -45,10 +45,10 @@ public class SettingsScript : MonoBehaviour
         if (PlayerPrefs.GetInt("Sound", 1) == 0)
             SFXButtonPressed();
 
-        if (PlayerPrefs.GetInt("DebugDraw", 1) == 0)
+        if (PlayerPrefs.GetInt("DebugDraw", 0) == 1)
             DebugDrawButtonPressed();
 
-        fps_lock = PlayerPrefs.GetInt("FPSLock");
+        fps_lock = PlayerPrefs.GetInt("FPSLock",60);
 
         if (fps_lock == 1000)
             fps_lock_button.GetComponentInChildren<Text>().text = "UNLOCKED";

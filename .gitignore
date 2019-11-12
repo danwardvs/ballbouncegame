@@ -1,4 +1,4 @@
-
+# Unity stuffs
 */[Ll]ibrary/
 */[Tt]emp/*
 */[Oo]bj/*
@@ -14,7 +14,9 @@
 # Editor version number
 BallBounceGame/ProjectSettings/ProjectVersion.txt
 
-
+# Other unity properties
+BallBounceGame/ProjectSettings/TimelineSettings.asset
+BallBounceGame/ProjectSettings/UnityConnectSettings.asset
 
 
 # Visual Studio cache directory

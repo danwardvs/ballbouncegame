@@ -13,16 +13,16 @@ public class FPSCounterScript : MonoBehaviour
     private int frames = 0; // Frames drawn over the interval
     private float timeleft; // Left time for current interval
     
-    bool enabled = true;
+    bool enabled = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
         timeleft = updateInterval;
-        if(PlayerPrefs.GetInt("DebugDraw", 1) == 0){
-            enabled=false;
-            gameObject.GetComponent<Text>().enabled = false;
+        if(PlayerPrefs.GetInt("DebugDraw", 0) == 1){
+            enabled=true;
+            gameObject.GetComponent<Text>().enabled = true;
         }
 
 

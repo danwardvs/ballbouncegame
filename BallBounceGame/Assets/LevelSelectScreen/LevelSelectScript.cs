@@ -62,7 +62,7 @@ public class LevelSelectScript : MonoBehaviour
     {
         // Check from file if the level is complete
         bool level_complete = false;
-        if (PlayerPrefs.GetInt("Level_" + level.ToString(), 1) == 1)
+        if (PlayerPrefs.GetInt("Level_" + level.ToString(), 0) == 1)
         {
             level_complete = true;
         }
