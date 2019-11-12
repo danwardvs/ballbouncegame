@@ -10,7 +10,7 @@ public class TitleScreenScript : MonoBehaviour
     void Start()
     {
         // Load fps locking settings from file
-        Application.targetFrameRate = PlayerPrefs.GetInt("FPSLock");
+        Application.targetFrameRate = PlayerPrefs.GetInt("FPSLock",60);
     }
     public void StartGame()
     {
