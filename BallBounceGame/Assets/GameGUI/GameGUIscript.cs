@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameGUIscript : MonoBehaviour
 {
-    public GameObject MenuButton;
-    public GameObject EndGameMenu;
-    public GameObject PauseMenu;
-
+    public GameObject menuButton;
+    public GameObject endGameMenu;
+    public GameObject pauseMenu;
+    
+    private GameScript gameScriptRef;
+    
+    private Text scoreText;
 
     void RestartLevel()
     {
@@ -22,8 +26,11 @@ public class GameGUIscript : MonoBehaviour
 
     public void FinishLevel()
     {
-        MenuButton.SetActive(false);
-        EndGameMenu.SetActive(true);
+        menuButton.SetActive(false);
+        endGameMenu.SetActive(true);
+        Vector2 stats = gameScriptRef.GetStats();
+        scoreText.text = "TIME: " + stats.x.ToString("F2") + "\nBALLS: " + stats.y.ToString();
+
     }
 
     public void LoadNextLevel()
@@ -43,13 +50,13 @@ public class GameGUIscript : MonoBehaviour
 
     public void PauseGame()
     {
-        PauseMenu.SetActive(true);
+        pauseMenu.SetActive(true);
         Time.timeScale = 0f;
     }
 
     public void UnpauseGame()
     {
-        PauseMenu.SetActive(false);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
 
@@ -57,8 +64,13 @@ public class GameGUIscript : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
-        EndGameMenu.SetActive(false);
-        PauseMenu.SetActive(false);
+        endGameMenu.SetActive(false);
+        pauseMenu.SetActive(false);
+        scoreText = transform.Find("EndGameMenu/ScoreText").GetComponent<Text>();
+       
+        // Get reference to main game script to pull stats from later in the endgame screen
+        gameScriptRef = GameObject.Find("GameStart").GetComponent<GameScript>();
+
     }
 
     // Update is called once per frame

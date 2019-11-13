@@ -9,7 +9,8 @@ public class TitleScreenScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Load fps locking settings from file
+        Application.targetFrameRate = PlayerPrefs.GetInt("FPSLock",60);
     }
     public void StartGame()
     {

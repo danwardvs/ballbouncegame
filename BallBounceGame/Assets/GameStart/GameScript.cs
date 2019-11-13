@@ -9,63 +9,78 @@ using UnityEngine.SceneManagement;
 public class GameScript : MonoBehaviour
 {
     // References to gameObjects that are used by this gameObject
-    public GameObject GameBallPrefab;
-    GameObject GameBallInstance;
-    GameObject arrowObject;
-    GameObject InitialClickIndicator;
-    GameObject DistanceIndicator;
+    public GameObject gameBallPrefab;
+
+    private GameObject arrowObject;
+    private GameObject initialClickIndicator;
+    private GameObject distanceIndicator;
 
     // We store a reference to this so we can change colour without re-getting the object
-    SpriteRenderer m_SpriteRenderer;
+    private SpriteRenderer gameStartSpriteRenderer;
 
-    Text gameText;
+    private Text gameText;
+    private float gameTimer = 0;
+    private float finishTime = 0;
+    private int ballCount = 0;
+    // Limit power to abritary value given here
+    private const float MAX_FORCE = 7;
+
 
     // Variables for the click and drag
-    bool is_clicked = false;
-    bool level_finish = false;
-    bool invert_controls = false;
-    Vector2 new_force;
-    Vector2 mouse_location;
-    Vector2 initial_click;
+    private bool isClicked = false;
+    private bool levelFinish = false;
+    private bool invertControls = false;
+    private Vector2 calculatedForce = new Vector2(0,0);
+    private Vector2 mouseLocation = new Vector2(0,0);
+    private Vector2 initialClick = new Vector2(0,0);
     
+    public Vector2 GetStats()
+    {   
+
+        return new Vector2(finishTime, ballCount);
+    }
+
     public void SetLevelFinish(bool newFinish)
     {   
         // Write progress to file
-        if(!level_finish){
+        if(!levelFinish){
             int level_num = SceneManager.GetActiveScene().buildIndex - 2;
             PlayerPrefs.SetInt("Level_" + level_num.ToString(), 1);
             print("Level_" + level_num.ToString());
             PlayerPrefs.Save();
 
         }
-
-        level_finish = newFinish;
+        levelFinish = newFinish;
     }
 
     void HandleClick(){
-        is_clicked = true;
-        initial_click = mouse_location;
-        InitialClickIndicator.transform.position = mouse_location;
-        DistanceIndicator.transform.position = mouse_location;
+        isClicked = true;
+        initialClick = mouseLocation;
+        initialClickIndicator.transform.position = mouseLocation;
+        distanceIndicator.transform.position = mouseLocation;
 
     }
     
     // Start is called before the first frame update
     void Start()
-    {   
+    {
+        // Start the game timer
+        gameTimer = Time.time;
 
         // Load inverted controls from PlayerPrefs, which is stored in a local
         // file and is set by the settings menu. 
         if(PlayerPrefs.GetInt("Control", 1)==0){
-            invert_controls = true;
+            invertControls = true;
         }
         //Grab a reference to the sprite renderer so we can manipulate the colour later on
-        m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        gameStartSpriteRenderer = GetComponent<SpriteRenderer>();
 
         // Snag a reference to the children for later use
         arrowObject = GameObject.Find("arrow");
-        InitialClickIndicator = GameObject.Find("InitialTouch");
-        DistanceIndicator = GameObject.Find("DistanceIndicator");
+        initialClickIndicator = GameObject.Find("InitialTouch");
+        distanceIndicator = GameObject.Find("DistanceIndicator");
+
+
 
         // The text object that should be included with every level
         gameText = GameObject.Find("ShotText").GetComponent<Text>();
@@ -74,16 +89,19 @@ public class GameScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         // Little thing to test out inverted control scheme
         if(Input.GetKeyDown("space")){
-            invert_controls=!invert_controls;
+            invertControls=!invertControls;
         }
 
-        if (!level_finish)
+        if (!levelFinish)
         {
+            // Update the timer so the EndgameGUI can grab it for the stats displayed
+            finishTime = Time.time - gameTimer;
+
             // Update mouse location, this is used later on in the update loop
-            mouse_location = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+            mouseLocation = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
 
             // Check if a touch has happened
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
@@ -105,33 +123,33 @@ public class GameScript : MonoBehaviour
             // Handles left click being released
             if (Input.GetMouseButtonUp(0))
             {
-                if (is_clicked)
+                if (isClicked)
                 {
                     // If game start object was being clicked and dragged, spawn a game ball
-                    GameBallInstance = Instantiate(GameBallPrefab, transform);
-                    GameBallInstance.GetComponent<Rigidbody2D>().AddForce(new_force * 100);
+                    GameObject game_ball_instance = Instantiate(gameBallPrefab, transform);
+                    game_ball_instance.GetComponent<Rigidbody2D>().AddForce(calculatedForce * 100);
+
+                    // Add one to our count for endgame stats
+                    ballCount++;
                 }
 
-                is_clicked = false;
+                isClicked = false;
 
             }
-            if (is_clicked)
+            if (isClicked)
             {
                 // Calculate a force based on mouse location and game start object position
-                new_force = new Vector2(initial_click.x, initial_click.y) - mouse_location;
+                calculatedForce = new Vector2(initialClick.x, initialClick.y) - mouseLocation;
 
-                if(!invert_controls){
-                    new_force = new_force*-1;
+                if(!invertControls){
+                    calculatedForce = calculatedForce*-1;
                 }
 
-                // Limit power to abritary value given here
-                float max_force = 7;
-
-                if (new_force.magnitude > max_force)
-                    new_force = new_force * (max_force / new_force.magnitude);
+                if (calculatedForce.magnitude > MAX_FORCE)
+                    calculatedForce = calculatedForce * (MAX_FORCE / calculatedForce.magnitude);
 
                 // We use MATH and FUNCTIONS to find angles
-                float new_angle = 90 + -57 * Mathf.Atan2(new_force.x, new_force.y);
+                float new_angle = 90 + -57 * Mathf.Atan2(calculatedForce.x, calculatedForce.y);
 
                 // Set the rotation of the arrow to show current trajectory of ball
                 arrowObject.transform.eulerAngles = new Vector3(0, 0, new_angle);
@@ -139,47 +157,48 @@ public class GameScript : MonoBehaviour
                 // Set scale of arrow to show power
                 float min_scale = 0.3f;
                 float scale_rate = 0.15f;
-                arrowObject.transform.localScale = new Vector2(min_scale + new_force.magnitude * scale_rate, min_scale + new_force.magnitude * scale_rate);
+                arrowObject.transform.localScale = new Vector2(min_scale + calculatedForce.magnitude * scale_rate, min_scale + calculatedForce.magnitude * scale_rate);
 
                 // Properly scale the image to match the mouse location
                 float distance_scale = 0.2f; 
-                DistanceIndicator.transform.localScale = new Vector2(new_force.magnitude*distance_scale,new_force.magnitude*distance_scale);
+                distanceIndicator.transform.localScale = new Vector2(calculatedForce.magnitude*distance_scale,calculatedForce.magnitude*distance_scale);
 
 
                 // Set colour of arrow to show power
-                arrowObject.GetComponent<SpriteRenderer>().color = new Color((1f / 7f) * new_force.magnitude, 1f - (1f / 7f) * new_force.magnitude, 0f);
+                arrowObject.GetComponent<SpriteRenderer>().color = new Color((1f / 7f) * calculatedForce.magnitude, 1f - (1f / 7f) * calculatedForce.magnitude, 0f);
 
                 // Set visual cues on the base object (triangle)
-                m_SpriteRenderer.color = Color.red;
+                gameStartSpriteRenderer.color = Color.red;
                 arrowObject.SetActive(true);
-                InitialClickIndicator.SetActive(true);
-                DistanceIndicator.SetActive(true);
+                initialClickIndicator.SetActive(true);
+                distanceIndicator.SetActive(true);
 
                 gameText.enabled = true;
 
                 // Update GUI to reflect the current shot vector
-                gameText.text = "Power:" + new_force.magnitude.ToString("#.#") + "\nAngle:" + new_angle.ToString("#");
+                gameText.text = "Power:" + calculatedForce.magnitude.ToString("#.#") + "\nAngle:" + new_angle.ToString("#");
 
 
             }
             else
             {
                 // Reset visual cues
-                m_SpriteRenderer.color = Color.green;
+                gameStartSpriteRenderer.color = Color.green;
                 arrowObject.SetActive(false);
-                InitialClickIndicator.SetActive(false);
-                DistanceIndicator.SetActive(false);
+                initialClickIndicator.SetActive(false);
+                distanceIndicator.SetActive(false);
 
 
                 gameText.enabled = false;
 
             }
         }
+        // If level is finished
         else
         {
             arrowObject.SetActive(false);
             gameText.enabled = false;
-            m_SpriteRenderer.enabled = false;
+            gameStartSpriteRenderer.enabled = false;
         }
     }
 }

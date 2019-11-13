@@ -17,6 +17,11 @@ public class LevelSelectScript : MonoBehaviour
         PopulateButtons(CreatePanel(), SceneManager.sceneCountInBuildSettings - LEVEL_START);
     }
 
+    public void BackButtonPressed(){
+        SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single);
+
+    }
+
     public void ResetSaves()
     {   
         // Rewrite all data to file
@@ -57,7 +62,7 @@ public class LevelSelectScript : MonoBehaviour
     {
         // Check from file if the level is complete
         bool level_complete = false;
-        if (PlayerPrefs.GetInt("Level_" + level.ToString(), 1) == 1)
+        if (PlayerPrefs.GetInt("Level_" + level.ToString(), 0) == 1)
         {
             level_complete = true;
         }
@@ -80,7 +85,16 @@ public class LevelSelectScript : MonoBehaviour
             ColorBlock new_cb = buttonObject.colors;
 
             new_cb.normalColor = Color.green;
-            new_cb.highlightedColor = new Color(0.3f, 1f, 0.3f);
+            new_cb.highlightedColor = new Color(0.5f, 1f, 0.5f);
+
+            buttonObject.colors = new_cb;
+
+        }else{
+            Button buttonObject = levelButton.GetComponent<Button>();
+            ColorBlock new_cb = buttonObject.colors;
+
+            new_cb.normalColor = new Color(0.6f, 0.3f, 0.3f);
+            new_cb.highlightedColor = new Color(0.8f, 0.5f, 0.5f);
 
             buttonObject.colors = new_cb;
         }
