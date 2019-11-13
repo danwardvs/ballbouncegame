@@ -504,9 +504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e81e19ea4944841b9d916b46535629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuButton: {fileID: 8195785617043542271}
-  EndGameMenu: {fileID: 2494934654881017006}
-  PauseMenu: {fileID: 920040285863288399}
+  menuButton: {fileID: 8195785617043542271}
+  endGameMenu: {fileID: 2494934654881017006}
+  pauseMenu: {fileID: 920040285863288399}
 --- !u!1 &7943278404744441363
 GameObject:
   m_ObjectHideFlags: 0
