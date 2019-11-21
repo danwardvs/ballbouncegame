@@ -30,8 +30,8 @@ Transform:
   m_LocalPosition: {x: 1.6, y: -6.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8832436568069246753}
-  - {fileID: 542109148073311155}
+  - {fileID: 4345045995328251845}
+  - {fileID: 7231319878596100183}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.03}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4cf3365bf97164e80c411a24169dd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1611461832940633876
+--- !u!1 &2199120058663922774
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,22 +131,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 542109148073311155}
-  - component: {fileID: 2178320239236251771}
+  - component: {fileID: 7231319878596100183}
+  - component: {fileID: 8362574601263676480}
   m_Layer: 0
-  m_Name: Freeform Light 2D
+  m_Name: Light_Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &542109148073311155
+--- !u!4 &7231319878596100183
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1611461832940633876}
+  m_GameObject: {fileID: 2199120058663922774}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7549786, y: 0.7304276, z: 1.7804999}
@@ -154,13 +154,13 @@ Transform:
   m_Father: {fileID: 6074549987995465878}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2178320239236251771
+--- !u!114 &8362574601263676480
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1611461832940633876}
+  m_GameObject: {fileID: 2199120058663922774}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
@@ -195,7 +195,7 @@ MonoBehaviour:
   - {x: 0.94487965, y: -0.93375814, z: 0}
   - {x: 0.93375885, y: 1.0449799, z: 0}
   - {x: -0.9782461, y: 1.0783447, z: 0}
---- !u!1 &3948420081071967689
+--- !u!1 &6398191691243932614
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,22 +203,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8832436568069246753}
-  - component: {fileID: 5046462742992551981}
+  - component: {fileID: 4345045995328251845}
+  - component: {fileID: 4866146292550490249}
   m_Layer: 0
-  m_Name: Point Light 2D
+  m_Name: Light_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8832436568069246753
+--- !u!4 &4345045995328251845
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3948420081071967689}
+  m_GameObject: {fileID: 6398191691243932614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7549786, y: 0.73042756, z: 1.7804999}
@@ -226,13 +226,13 @@ Transform:
   m_Father: {fileID: 6074549987995465878}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5046462742992551981
+--- !u!114 &4866146292550490249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3948420081071967689}
+  m_GameObject: {fileID: 6398191691243932614}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
