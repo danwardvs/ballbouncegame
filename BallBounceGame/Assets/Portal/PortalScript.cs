@@ -25,9 +25,8 @@ public class PortalScript : MonoBehaviour
         
         this.transform.Find("RightWall").GetComponent<SpriteRenderer>().color = block_colour;
         this.transform.Find("LeftWall").GetComponent<SpriteRenderer>().color = block_colour;
-
         this.transform.Find("BackWall").GetComponent<SpriteRenderer>().color = block_colour;
-
+        this.transform.Find("Inner").GetComponent<SpriteRenderer>().color = portal_colour;
 
 
         // Find the sibling portal and store a reference for teleportation of the ball
