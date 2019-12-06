@@ -40,12 +40,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Backdrop
+    uniqueID: 3923282285
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: GameElems
+    uniqueID: 3527221585
     locked: 0
   - name: Portals
     uniqueID: 3644760281
     locked: 0
   - name: Ball
     uniqueID: 231990841
+    locked: 0
+  - name: UI
+    uniqueID: 2017639407
     locked: 0

@@ -20,7 +20,14 @@ public class PortalScript : MonoBehaviour
         // Get the colour that is set by a public variable by the parent
         portal_colour = gameObject.transform.parent.GetComponent<PortalParentScript>().portal_colour;
         //portal_colour = Color.red;
+        this.transform.Find("Light_Area").GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().color = portal_colour;
+        Color block_colour = new Color(portal_colour.r,portal_colour.g,portal_colour.b);
+        
+        this.transform.Find("RightWall").GetComponent<SpriteRenderer>().color = block_colour;
+        this.transform.Find("LeftWall").GetComponent<SpriteRenderer>().color = block_colour;
+        this.transform.Find("BackWall").GetComponent<SpriteRenderer>().color = block_colour;
         this.transform.Find("Inner").GetComponent<SpriteRenderer>().color = portal_colour;
+
 
         // Find the sibling portal and store a reference for teleportation of the ball
 

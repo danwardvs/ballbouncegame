@@ -174,9 +174,22 @@ public class GameScript : MonoBehaviour
                 distanceIndicator.SetActive(true);
 
                 gameText.enabled = true;
+                
+                string angle_string = "";
+                float formatted_angle = new_angle;
+                if(formatted_angle<0){
+                    formatted_angle = 360 + formatted_angle;
+                }
+                if(formatted_angle<1)
+                    angle_string = "0";
+                else
+                    angle_string = formatted_angle.ToString("#");
+
+                
+                
 
                 // Update GUI to reflect the current shot vector
-                gameText.text = "Power:" + calculatedForce.magnitude.ToString("#.#") + "\nAngle:" + new_angle.ToString("#");
+                gameText.text = "Power:" + calculatedForce.magnitude.ToString("#.#") + "\nAngle:" + angle_string;
 
 
             }
