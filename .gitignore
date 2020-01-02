@@ -8,6 +8,9 @@
 */Packages/manifest.json
 */Assets/AssetStoreTools*
 
+*.lighting
+*.meta
+
 # Android build data
 .gradle/*
 
@@ -17,6 +20,8 @@ BallBounceGame/ProjectSettings/ProjectVersion.txt
 # Other unity properties
 BallBounceGame/ProjectSettings/TimelineSettings.asset
 BallBounceGame/ProjectSettings/UnityConnectSettings.asset
+BallBounceGame/ProjectSettings/VersionControlSettings.asset
+BallBounceGame/UpgradeLog.htm  
 
 
 # Visual Studio cache directory
