@@ -15,7 +15,6 @@ public class GameBallScript : MonoBehaviour
     {
        ballSP = GetComponent<SpriteRenderer>();
        sprites = Resources.LoadAll<Sprite>("orb3");
-        print(sprites.Length);
 
     }
 
