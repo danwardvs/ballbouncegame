@@ -31,7 +31,6 @@ public class GameBallScript : MonoBehaviour
             }
             timer = 0;
             ballSP.sprite = sprites[i];
-            print("butts");
 
         }
 }
