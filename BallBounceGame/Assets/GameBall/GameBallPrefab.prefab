@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1514267566204388831}
   - component: {fileID: 1514267566204388830}
   - component: {fileID: 1514267566204388818}
+  - component: {fileID: -5005994533452768183}
   m_Layer: 0
   m_Name: GameBallPrefab
   m_TagString: ball
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -650207015
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 891e8cfc0a2c53441b88e3da5449a1d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73bbf7e6eaa7ac447bf086b216917eb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,6 +122,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-5005994533452768183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514267566204388829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13f7f88a0613a34b85bdbfe438d3547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6921663944795000523
 GameObject:
   m_ObjectHideFlags: 0
