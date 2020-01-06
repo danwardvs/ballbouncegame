@@ -14,7 +14,7 @@ public class GameBallScript : MonoBehaviour
     void Start()
     {
        ballSP = GetComponent<SpriteRenderer>();
-       sprites = Resources.LoadAll<Sprite>("orb2");
+       sprites = Resources.LoadAll<Sprite>("orb3");
         print(sprites.Length);
 
     }
@@ -23,8 +23,8 @@ public class GameBallScript : MonoBehaviour
     void Update()
     {
        
-        timer+=Time.deltaTime;
-        if (timer > 0.08f) {
+        timer+=Time.deltaTime*Random.Range(0.2f, 1.8f);
+        if (timer > 0.1f) {
             i++;
             if (i == sprites.Length) { 
              i = 0;
