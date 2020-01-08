@@ -13,24 +13,23 @@ public class GameBallScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       ballSP = GetComponent<SpriteRenderer>();
-       sprites = Resources.LoadAll<Sprite>("orb3");
-
+        sprites = Resources.LoadAll<Sprite>("orb3");
+        ballSP = GetComponent<SpriteRenderer>();
+   
     }
 
     // Update is called once per frame
     void Update()
     {
-       
         timer+=Time.deltaTime*Random.Range(0.2f, 1.8f);
         if (timer > 0.1f) {
             i++;
             if (i == sprites.Length) { 
-             i = 0;
+                i = 0;
             }
             timer = 0;
             ballSP.sprite = sprites[i];
-
         }
+    
 }
 }

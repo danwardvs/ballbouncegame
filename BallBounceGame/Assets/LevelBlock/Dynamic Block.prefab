@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2162600383648081280}
   - component: {fileID: 602573140900260518}
+  - component: {fileID: 8583356279514505253}
   m_Layer: 0
   m_Name: Light_Point_L
   m_TagString: Untagged
@@ -72,6 +73,19 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &8583356279514505253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4390957798086314416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e7b7bf6c6b24df9bd7cce7c5f24a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  importanceLevel: 2
 --- !u!50 &6753307205759082338
 Rigidbody2D:
   serializedVersion: 4
@@ -103,6 +117,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8872819740772352004}
   - component: {fileID: 5991103470321168436}
+  - component: {fileID: 4851352569497985685}
+  - component: {fileID: 5159074916864062809}
   m_Layer: 0
   m_Name: Light_Point_R
   m_TagString: Untagged
@@ -165,6 +181,32 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &4851352569497985685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7007275942834647559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e7b7bf6c6b24df9bd7cce7c5f24a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  importanceLevel: 0
+--- !u!114 &5159074916864062809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7007275942834647559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e7b7bf6c6b24df9bd7cce7c5f24a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  importanceLevel: 2
 --- !u!1001 &6538073320625290514
 PrefabInstance:
   m_ObjectHideFlags: 0

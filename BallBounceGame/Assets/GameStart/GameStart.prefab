@@ -184,6 +184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameBallPrefab: {fileID: 1514267566204388829, guid: d46d5a53a2d2fc749846f82ac9631b96,
     type: 3}
+  gameBallPrefabBasic: {fileID: 1514267566204388829, guid: 051c622bf263a0e67bb03353b7732064,
+    type: 3}
 --- !u!82 &7961529219265605765
 AudioSource:
   m_ObjectHideFlags: 0

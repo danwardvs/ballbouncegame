@@ -10,6 +10,7 @@ public class GameScript : MonoBehaviour
 {
     // References to gameObjects that are used by this gameObject
     public GameObject gameBallPrefab;
+    public GameObject gameBallPrefabBasic;
 
     private GameObject arrowObject;
     private GameObject initialClickIndicator;
@@ -139,7 +140,15 @@ public class GameScript : MonoBehaviour
                 if (isClicked)
                 {
                     // If game start object was being clicked and dragged, spawn a game ball
-                    GameObject game_ball_instance = Instantiate(gameBallPrefab, transform);
+
+                    //Spawns a basic ball if graphics level is set to low or very low
+                    GameObject game_ball_instance = null;
+                    if(QualitySettings.GetQualityLevel()>1)
+                        game_ball_instance = Instantiate(gameBallPrefab, transform);
+                    else
+                        game_ball_instance = Instantiate(gameBallPrefabBasic, transform);
+
+
                     game_ball_instance.GetComponent<Rigidbody2D>().AddForce(calculatedForce * 100);
 
                     // Add one to our count for endgame stats
