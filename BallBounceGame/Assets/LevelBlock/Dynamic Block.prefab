@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999f6834ba24984c4bc7987d0e6e3d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  importanceLevel: 0
+  importanceLevel: 2
 --- !u!50 &6753307205759082338
 Rigidbody2D:
   serializedVersion: 4
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999f6834ba24984c4bc7987d0e6e3d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  importanceLevel: 0
+  importanceLevel: 2
 --- !u!1001 &6538073320625290514
 PrefabInstance:
   m_ObjectHideFlags: 0

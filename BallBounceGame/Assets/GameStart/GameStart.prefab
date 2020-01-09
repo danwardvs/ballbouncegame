@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameBallPrefab: {fileID: 1514267566204388829, guid: d46d5a53a2d2fc749846f82ac9631b96,
     type: 3}
-  gameBallPrefabBasic: {fileID: 1514267566204388829, guid: 051c622bf263a0e67bb03353b7732064,
+  gameBallPrefabBasic: {fileID: 1514267566204388829, guid: 83471d9d23a4baf94814465acb0960f4,
     type: 3}
 --- !u!82 &7961529219265605765
 AudioSource:
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999f6834ba24984c4bc7987d0e6e3d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  importanceLevel: 2
+  importanceLevel: 3
 --- !u!1 &6895087534955032480
 GameObject:
   m_ObjectHideFlags: 0
