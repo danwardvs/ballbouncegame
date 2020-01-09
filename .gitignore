@@ -9,7 +9,6 @@
 */Assets/AssetStoreTools*
 
 *.lighting
-*.meta
 
 # Android build data
 .gradle/*

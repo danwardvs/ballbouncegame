@@ -82,10 +82,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4390957798086314416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07e7b7bf6c6b24df9bd7cce7c5f24a04, type: 3}
+  m_Script: {fileID: 11500000, guid: 999f6834ba24984c4bc7987d0e6e3d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  importanceLevel: 2
+  importanceLevel: 0
 --- !u!50 &6753307205759082338
 Rigidbody2D:
   serializedVersion: 4
@@ -118,7 +118,6 @@ GameObject:
   - component: {fileID: 8872819740772352004}
   - component: {fileID: 5991103470321168436}
   - component: {fileID: 4851352569497985685}
-  - component: {fileID: 5159074916864062809}
   m_Layer: 0
   m_Name: Light_Point_R
   m_TagString: Untagged
@@ -190,23 +189,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7007275942834647559}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07e7b7bf6c6b24df9bd7cce7c5f24a04, type: 3}
+  m_Script: {fileID: 11500000, guid: 999f6834ba24984c4bc7987d0e6e3d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   importanceLevel: 0
---- !u!114 &5159074916864062809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007275942834647559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07e7b7bf6c6b24df9bd7cce7c5f24a04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  importanceLevel: 2
 --- !u!1001 &6538073320625290514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308,7 +294,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 264fa7993fbd4c538b21c67adbe664de, type: 2}
+      objectReference: {fileID: 2100000, guid: 2958de2be751ffc3984a900ae42b4b9f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4a89f8c651adb642811d04d0fe82ee7, type: 3}
 --- !u!1 &9206516714872073705 stripped

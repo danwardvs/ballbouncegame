@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4614177389820074163}
   - component: {fileID: 318500939637839408}
-  - component: {fileID: 5817117729468282812}
+  - component: {fileID: 5425963094666635854}
   m_Layer: 0
   m_Name: Light_Point_L
   m_TagString: Untagged
@@ -73,7 +73,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &5817117729468282812
+--- !u!114 &5425963094666635854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2569217736099871006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07e7b7bf6c6b24df9bd7cce7c5f24a04, type: 3}
+  m_Script: {fileID: 11500000, guid: 999f6834ba24984c4bc7987d0e6e3d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   importanceLevel: 2
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9021684946810696047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07e7b7bf6c6b24df9bd7cce7c5f24a04, type: 3}
+  m_Script: {fileID: 11500000, guid: 999f6834ba24984c4bc7987d0e6e3d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   importanceLevel: 2
@@ -273,7 +273,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 264fa7993fbd4c538b21c67adbe664de, type: 2}
+      objectReference: {fileID: 2100000, guid: 2958de2be751ffc3984a900ae42b4b9f, type: 2}
     - target: {fileID: 6460888268219354656, guid: c4a89f8c651adb642811d04d0fe82ee7,
         type: 3}
       propertyPath: m_Material
