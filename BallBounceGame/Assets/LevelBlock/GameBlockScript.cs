@@ -11,6 +11,7 @@ public class GameBlockScript : MonoBehaviour
         UnityEngine.Experimental.Rendering.Universal.Light2D area_light = GameObject.Find("BlockLight").GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
         
         area_light.color = block_sprite_renderer.color;
+        print("butts");
     }
 
     // Update is called once per frame

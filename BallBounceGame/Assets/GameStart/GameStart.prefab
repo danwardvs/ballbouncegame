@@ -292,6 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2116351531949951471}
   - component: {fileID: 5889058157699132736}
+  - component: {fileID: 63247578436816148}
   m_Layer: 0
   m_Name: Light_Flash
   m_TagString: Untagged
@@ -354,6 +355,19 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &63247578436816148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5120284908158889331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e7b7bf6c6b24df9bd7cce7c5f24a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  importanceLevel: 3
 --- !u!1 &6229990882279392288
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000962812763781937}
   - component: {fileID: 1342470231041765759}
+  - component: {fileID: 592916100519112046}
   m_Layer: 0
   m_Name: Light_Point
   m_TagString: Untagged
@@ -401,7 +416,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.783
   m_Color: {r: 0.015756488, g: 1, b: 0, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 000000006d89d8e9
   m_LightCookieSprite: {fileID: 0}
@@ -426,6 +441,19 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &592916100519112046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229990882279392288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e7b7bf6c6b24df9bd7cce7c5f24a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  importanceLevel: 1
 --- !u!1 &6895087534955032480
 GameObject:
   m_ObjectHideFlags: 0

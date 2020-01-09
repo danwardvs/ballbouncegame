@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4614177389820074163}
   - component: {fileID: 318500939637839408}
+  - component: {fileID: 5817117729468282812}
   m_Layer: 0
   m_Name: Light_Point_L
   m_TagString: Untagged
@@ -72,6 +73,19 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &5817117729468282812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2569217736099871006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e7b7bf6c6b24df9bd7cce7c5f24a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  importanceLevel: 2
 --- !u!1 &9021684946810696047
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,6 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 862266846650088298}
   - component: {fileID: 1030232465596825303}
+  - component: {fileID: 4142957454736030878}
   m_Layer: 0
   m_Name: Light_Point_R
   m_TagString: Untagged
@@ -144,6 +159,19 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &4142957454736030878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9021684946810696047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e7b7bf6c6b24df9bd7cce7c5f24a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  importanceLevel: 2
 --- !u!1001 &1356642374269722170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -241,6 +269,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5977836487737238908, guid: c4a89f8c651adb642811d04d0fe82ee7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 264fa7993fbd4c538b21c67adbe664de, type: 2}
     - target: {fileID: 6460888268219354656, guid: c4a89f8c651adb642811d04d0fe82ee7,
         type: 3}
       propertyPath: m_Material
