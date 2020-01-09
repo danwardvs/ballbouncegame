@@ -15,6 +15,7 @@ public class SettingsScript : MonoBehaviour
     Button music_button;
     Button debug_draw_button;
     Button fps_lock_button;
+    Button graphics_button;
 
     bool control_state = true;
     bool sfx_enabled = true;
@@ -22,6 +23,7 @@ public class SettingsScript : MonoBehaviour
     bool debug_draw = false;
     int fps_lock = 60;
     int[] fps_list = { 30, 60, 120, 144, 1000 };
+    string[] GRAPHIC_LEVELS = { "VERY LOW","LOW","MEDIUM","HIGH" };
 
 
     // Start is called before the first frame update
@@ -33,9 +35,15 @@ public class SettingsScript : MonoBehaviour
         music_button = GameObject.Find("MusicButton").GetComponent<Button>();
         debug_draw_button = GameObject.Find("DebugDrawButton").GetComponent<Button>();
         fps_lock_button = GameObject.Find("FPSLockButton").GetComponent<Button>();
+        graphics_button = GameObject.Find("GraphicsButton").GetComponent<Button>();
+
 
 
         // Load player settings from file and set the buttons accordlingly
+
+        graphics_button.GetComponentInChildren<Text>().text = GRAPHIC_LEVELS[QualitySettings.GetQualityLevel()];
+
+
         if (PlayerPrefs.GetInt("Control", 1) == 0)
             ControlButtonPressed();
 
@@ -91,6 +99,17 @@ public class SettingsScript : MonoBehaviour
 
         PlayerPrefs.SetInt("FPSLock", fps_lock);
         Application.targetFrameRate = fps_lock;
+    }
+    public void GraphicsButtonPressed()
+    {
+        int new_level = QualitySettings.GetQualityLevel();
+        new_level--;
+        if (new_level == -1)
+            new_level = 3;
+        QualitySettings.SetQualityLevel(new_level,true);
+
+        graphics_button.GetComponentInChildren<Text>().text = GRAPHIC_LEVELS[new_level];
+
     }
 
     public void ControlButtonPressed()
