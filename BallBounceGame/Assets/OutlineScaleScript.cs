@@ -8,6 +8,9 @@ public class OutlineScaleScript : MonoBehaviour
 {
     GameObject insideBlock;
 
+    // Smaller value makes larger outlines
+    const float OUTLINE_SIZE = 0.9f;
+
     // Start is called before the first frame update
     
     void Start()
@@ -15,7 +18,8 @@ public class OutlineScaleScript : MonoBehaviour
         float x = transform.localScale.x;
         float y = transform.localScale.y;
         insideBlock = transform.Find("InsideBlock").gameObject;
-        insideBlock.transform.localScale = new Vector3(0.9f + (0.1f -0.1f/x) ,0.9f + (0.1f -0.1f/y),1);
+        Vector3 new_scale = new Vector3(OUTLINE_SIZE + ((1-OUTLINE_SIZE) - (1-OUTLINE_SIZE)/x),OUTLINE_SIZE + ((1-OUTLINE_SIZE) - (1-OUTLINE_SIZE)/y));
+        insideBlock.transform.localScale = new_scale;
 
     }
 
