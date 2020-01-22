@@ -9,7 +9,7 @@ public class OutlineScaleScript : MonoBehaviour
     GameObject insideBlock;
 
     // Smaller value makes larger outlines
-    const float OUTLINE_SIZE = 0.9f;
+    const float OUTLINE_SIZE = 0.85f;
 
     // Start is called before the first frame update
     
