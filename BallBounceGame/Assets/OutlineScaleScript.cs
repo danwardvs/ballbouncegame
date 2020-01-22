@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[ExecuteInEditMode]
 public class OutlineScaleScript : MonoBehaviour
 {
     GameObject insideBlock;
 
     // Start is called before the first frame update
-    [ExecuteInEditMode]
-    void Awake()
+    
+    void Start()
     {
         float x = transform.localScale.x;
         float y = transform.localScale.y;
