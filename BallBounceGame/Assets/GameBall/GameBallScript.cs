@@ -17,7 +17,7 @@ public class GameBallScript : MonoBehaviour
     void Start()
     {
         if(QualitySettings.GetQualityLevel()>0){
-            sprites = Resources.LoadAll<Sprite>("orb3");
+            sprites = Resources.LoadAll<Sprite>("BallSprites");
             ballSP = GetComponent<SpriteRenderer>();
         }
    
