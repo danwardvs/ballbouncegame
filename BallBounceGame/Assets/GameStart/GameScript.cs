@@ -14,6 +14,9 @@ public class GameScript : MonoBehaviour
     private GameObject arrowObject;
     private GameObject initialClickIndicator;
     private GameObject distanceIndicator;
+  
+    private UnityEngine.Experimental.Rendering.Universal.Light2D lightFlash;
+    private AudioSource audioSource;
 
     // We store a reference to this so we can change colour without re-getting the object
     private SpriteRenderer gameStartSpriteRenderer;
@@ -33,7 +36,11 @@ public class GameScript : MonoBehaviour
     private Vector2 calculatedForce = new Vector2(0,0);
     private Vector2 mouseLocation = new Vector2(0,0);
     private Vector2 initialClick = new Vector2(0,0);
+
+    // Intensity for flash of light when ball flashed
+    private float lightIntensity = 0;
     
+
     public Vector2 GetStats()
     {   
 
@@ -63,7 +70,7 @@ public class GameScript : MonoBehaviour
     
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         // Start the game timer
         gameTimer = Time.time;
 
@@ -79,7 +86,10 @@ public class GameScript : MonoBehaviour
         arrowObject = GameObject.Find("arrow");
         initialClickIndicator = GameObject.Find("InitialTouch");
         distanceIndicator = GameObject.Find("DistanceIndicator");
+        lightFlash = this.transform.Find("Light_Flash").GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
 
+        // Get a reference to the attached AudioSource in the prefab
+        audioSource = GetComponent<AudioSource>();
 
 
         // The text object that should be included with every level
@@ -90,6 +100,8 @@ public class GameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
+
+
         // Little thing to test out inverted control scheme
         if(Input.GetKeyDown("space")){
             invertControls=!invertControls;
@@ -126,11 +138,20 @@ public class GameScript : MonoBehaviour
                 if (isClicked)
                 {
                     // If game start object was being clicked and dragged, spawn a game ball
+
+                    //Spawns a basic ball if graphics level is set to low or very low
                     GameObject game_ball_instance = Instantiate(gameBallPrefab, transform);
+                
                     game_ball_instance.GetComponent<Rigidbody2D>().AddForce(calculatedForce * 100);
 
                     // Add one to our count for endgame stats
                     ballCount++;
+
+                    // Set flash of light
+                    lightIntensity=5;
+
+                    // Play the shoot sound effect
+                    audioSource.PlayOneShot(audioSource.clip,1);
                 }
 
                 isClicked = false;
@@ -206,6 +227,8 @@ public class GameScript : MonoBehaviour
 
             }
         }
+        
+
         // If level is finished
         else
         {
@@ -213,5 +236,11 @@ public class GameScript : MonoBehaviour
             gameText.enabled = false;
             gameStartSpriteRenderer.enabled = false;
         }
+
+
+    if(lightIntensity>0)
+        lightIntensity-=Time.deltaTime*17;
+    lightFlash.intensity = lightIntensity;
+
     }
 }

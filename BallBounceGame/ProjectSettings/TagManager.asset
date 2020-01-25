@@ -43,6 +43,9 @@ TagManager:
   - name: Backdrop
     uniqueID: 3923282285
     locked: 0
+  - name: Outline
+    uniqueID: 3296536065
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

@@ -205,6 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4345045995328251845}
   - component: {fileID: 4866146292550490249}
+  - component: {fileID: 8922069596929255150}
   m_Layer: 0
   m_Name: Light_Point
   m_TagString: Untagged
@@ -267,3 +268,16 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &8922069596929255150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6398191691243932614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 999f6834ba24984c4bc7987d0e6e3d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  importanceLevel: 1

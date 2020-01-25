@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1514267566204388831}
   - component: {fileID: 1514267566204388830}
   - component: {fileID: 1514267566204388818}
+  - component: {fileID: -5005994533452768183}
   m_Layer: 0
   m_Name: GameBallPrefab
   m_TagString: ball
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -650207015
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 891e8cfc0a2c53441b88e3da5449a1d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1cdbbdf8fa5e9d1ba84c1e921717df14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,6 +122,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-5005994533452768183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514267566204388829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd542d1c9e7b18daba62ff58829a042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6921663944795000523
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3278813994084652822}
   - component: {fileID: 4350619415340651743}
+  - component: {fileID: 7092410419176991906}
   m_Layer: 0
   m_Name: Light_Point
   m_TagString: Untagged
@@ -193,3 +207,16 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &7092410419176991906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921663944795000523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 999f6834ba24984c4bc7987d0e6e3d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  importanceLevel: 3
