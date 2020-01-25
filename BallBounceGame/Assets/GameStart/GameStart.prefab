@@ -138,7 +138,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e2267a957ae05929cb1ef7656f05a747, type: 2}
+  - {fileID: 2100000, guid: 2958de2be751ffc3984a900ae42b4b9f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,8 +183,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameBallPrefab: {fileID: 1514267566204388829, guid: d46d5a53a2d2fc749846f82ac9631b96,
-    type: 3}
-  gameBallPrefabBasic: {fileID: 1514267566204388829, guid: 83471d9d23a4baf94814465acb0960f4,
     type: 3}
 --- !u!82 &7961529219265605765
 AudioSource:

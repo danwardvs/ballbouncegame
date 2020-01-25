@@ -189,7 +189,7 @@ public class GameScript : MonoBehaviour
                 arrowObject.GetComponent<SpriteRenderer>().color = new Color((1f / 7f) * calculatedForce.magnitude, 1f - (1f / 7f) * calculatedForce.magnitude, 0f);
 
                 // Set visual cues on the base object (triangle)
-                gameStartSpriteRenderer.color = Color.red;
+                gameStartSpriteRenderer.color = new Color(0,0.2f,0);
                 arrowObject.SetActive(true);
                 initialClickIndicator.SetActive(true);
                 distanceIndicator.SetActive(true);
