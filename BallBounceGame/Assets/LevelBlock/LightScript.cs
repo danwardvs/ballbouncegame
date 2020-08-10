@@ -5,9 +5,11 @@ using UnityEngine;
 public class LightScript : MonoBehaviour
 {
     public int importanceLevel=0;
+
     // Start is called before the first frame update
     void Start()
     {
+        print(QualitySettings.GetQualityLevel());
         if(QualitySettings.GetQualityLevel()<importanceLevel)
 
             gameObject.SetActive(false);
