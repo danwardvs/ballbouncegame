@@ -46,6 +46,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -156,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98517eba0207cf4ab81094ed2bd0e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotation_speed: 10
+  rotation_speed: 20
 --- !u!114 &6875583070387900570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,6 +302,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
