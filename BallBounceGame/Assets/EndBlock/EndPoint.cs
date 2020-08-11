@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EndPoint : MonoBehaviour
-{
+{   
     GameObject GameGUI;
     GameObject GameStart;
     UnityEngine.Experimental.Rendering.Universal.Light2D LightPoint;
     private float clock = 0;
+    private float rotation_speed = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class EndPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameObject.transform.Rotate(0, 0, rotation_speed * Time.deltaTime, Space.Self);
         clock += Time.deltaTime/1f;
         LightPoint.intensity = (float)( 4 + 2.5f*Math.Sin(clock));
         

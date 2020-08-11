@@ -19,8 +19,8 @@ public class PortalScript : MonoBehaviour
         
         // Get the colour that is set by a public variable by the parent
         portal_colour = gameObject.transform.parent.GetComponent<PortalParentScript>().portal_colour;
-        //portal_colour = Color.red;
-        this.transform.Find("Light_Area").GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().color = portal_colour;
+
+        this.transform.Find("Light_Point").GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>().color = portal_colour;
         Color block_colour = new Color(portal_colour.r,portal_colour.g,portal_colour.b);
         
         this.transform.Find("RightWall").GetComponent<SpriteRenderer>().color = block_colour;
@@ -34,7 +34,7 @@ public class PortalScript : MonoBehaviour
         if (gameObject.name == "Portal_1")
         {
             sibling_portal = gameObject.transform.parent.Find("Portal_2").gameObject;
-            sibling_portal_collider = gameObject.transform.parent.Find("Portal_2/Inner").gameObject;
+            sibling_portal_collider = gameObject.transform.parent.Find("Portal_2/Spawn_Location").gameObject;
 
 
 
@@ -42,7 +42,7 @@ public class PortalScript : MonoBehaviour
         else
         {
             sibling_portal = gameObject.transform.parent.Find("Portal_1").gameObject;
-            sibling_portal_collider = gameObject.transform.parent.Find("Portal_1/Inner").gameObject;
+            sibling_portal_collider = gameObject.transform.parent.Find("Portal_1/Spawn_Location").gameObject;
 
         }
 
