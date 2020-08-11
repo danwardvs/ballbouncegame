@@ -9,7 +9,6 @@ public class LightScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print(QualitySettings.GetQualityLevel());
         if(QualitySettings.GetQualityLevel()<importanceLevel)
 
             gameObject.SetActive(false);
