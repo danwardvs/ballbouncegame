@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameGUIscript : MonoBehaviour
 {
     public GameObject menuButton;
     public GameObject endGameMenu;
     public GameObject pauseMenu;
+    public GameObject tipText; 
+
     
     private GameScript gameScriptRef;
     
@@ -26,7 +29,9 @@ public class GameGUIscript : MonoBehaviour
 
     public void FinishLevel()
     {
+        tipText.SetActive(false);
         menuButton.SetActive(false);
+
         endGameMenu.SetActive(true);
         Vector2 stats = gameScriptRef.GetStats();
         scoreText.text = "TIME: " + stats.x.ToString("F2") + "\nBALLS: " + stats.y.ToString();
@@ -50,23 +55,60 @@ public class GameGUIscript : MonoBehaviour
 
     public void PauseGame()
     {
+        tipText.SetActive(false);
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
     }
 
     public void UnpauseGame()
     {
+        
+        tipText.SetActive(true);
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         Time.timeScale = 1f;
         endGameMenu.SetActive(false);
         pauseMenu.SetActive(false);
         scoreText = transform.Find("EndGameMenu/ScoreText").GetComponent<Text>();
+        
+        // Converts scene name like "Level_01" into an integer of "1"
+        int level_number = Int32.Parse(SceneManager.GetActiveScene().name.Substring(6));
+
+        string new_tip_text = "";
+
+        switch(level_number){
+            case 1:
+                new_tip_text = "Press anywhere to drag and launch a ball. Hit the star to complete the level";
+                break;
+            case 3:
+                new_tip_text = "Power can be changed based on the drag distance";
+                break;
+            case 4:
+                new_tip_text = "Press Menu then Restart to reset the level";
+                break;
+            case 6:
+                new_tip_text = "Blue blocks are movable";
+                break;
+            case 9:
+                new_tip_text = "Red blocks are bouncy";
+                break;
+            case 13:
+                new_tip_text = "Portals carry the ball's momentum";
+                break;
+            case 16:
+                new_tip_text = "Yellow blocks rotate";
+                break;
+
+        }
+        tipText.GetComponent<Text>().text = new_tip_text;
+
+        
+
        
         // Get reference to main game script to pull stats from later in the endgame screen
         gameScriptRef = GameObject.Find("GameStart").GetComponent<GameScript>();
