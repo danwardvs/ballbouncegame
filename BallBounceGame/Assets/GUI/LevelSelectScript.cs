@@ -7,8 +7,8 @@ public class LevelSelectScript : MonoBehaviour
     public GameObject ButtonPrefab;
 
     // Since the title screen, level select, and options screen come before
-    // the first levels in the build settings, the first actual level starts at scene number 3
-    const int LEVEL_START = 3;
+    // the first levels in the build settings, the first actual level starts at scene number 4
+    const int LEVEL_START = 4;
 
     // Start is called before the first frame update
     void Start()

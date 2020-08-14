@@ -24,6 +24,10 @@ public class TitleScreenScript : MonoBehaviour
         SceneManager.LoadScene(2, LoadSceneMode.Single);
 
     }
+    public void OpenCredits(){
+        SceneManager.LoadScene(3, LoadSceneMode.Single);
+
+    }
 
     // Update is called once per frame
     void Update()
