@@ -974,6 +974,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 79658223109215171, guid: 9097501c07431684fa97aabfc9b22864,
+        type: 3}
+      propertyPath: tipText
+      value: 
+      objectReference: {fileID: 7816455589279826275}
     - target: {fileID: 6513943132639249014, guid: 9097501c07431684fa97aabfc9b22864,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1117,3 +1122,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9097501c07431684fa97aabfc9b22864, type: 3}
+--- !u!1 &7816455589279826275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2865264209517488985, guid: 9097501c07431684fa97aabfc9b22864,
+    type: 3}
+  m_PrefabInstance: {fileID: 7816455589279826274}
+  m_PrefabAsset: {fileID: 0}
