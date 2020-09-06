@@ -28,6 +28,8 @@ public class GameScript : MonoBehaviour
     // Limit power to abritary value given here
     private const float MAX_FORCE = 7;
 
+    private string highscoreString = "";
+
 
     // Variables for the click and drag
     private bool isClicked = false;
@@ -43,17 +45,27 @@ public class GameScript : MonoBehaviour
 
     public Vector2 GetStats()
     {   
-
         return new Vector2(finishTime, ballCount);
+    }
+    public string GetHighscore(){
+        return highscoreString;
     }
 
     public void SetLevelFinish(bool newFinish)
     {   
         // Write progress to file
         if(!levelFinish){
-            int level_num = SceneManager.GetActiveScene().buildIndex - 2;
+            int level_num = SceneManager.GetActiveScene().buildIndex - Constants.LEVEL_START+1;
+            int prev_highscore = PlayerPrefs.GetInt("Level_"+ level_num.ToString() +"_Score", 9999);
+            if(prev_highscore > ballCount){
+                PlayerPrefs.SetInt("Level_"+ level_num.ToString() +"_Score",ballCount);
+                highscoreString = "NEW HIGHSCORE!";
+                if(prev_highscore!=9999)
+                    highscoreString+="\nPREV BEST: " + prev_highscore.ToString();
+            }
+
             PlayerPrefs.SetInt("Level_" + level_num.ToString(), 1);
-            print("Level_" + level_num.ToString());
+
             PlayerPrefs.Save();
 
         }

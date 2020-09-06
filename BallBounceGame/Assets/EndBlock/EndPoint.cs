@@ -39,8 +39,9 @@ public class EndPoint : MonoBehaviour
     {
         if (other.gameObject.tag == "ball")
         {
-            GameGUI.GetComponent<GameGUIscript>().FinishLevel();
             GameStart.GetComponent<GameScript>().SetLevelFinish(true);
+            GameGUI.GetComponent<GameGUIscript>().FinishLevel();
+
 
         }
     }
