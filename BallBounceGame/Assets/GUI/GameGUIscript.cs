@@ -48,7 +48,7 @@ public class GameGUIscript : MonoBehaviour
     {
 
         // Loads next available level (current max of 5)
-        if( SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1)
+        if( SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - Constants.NON_LEVEL_SCENES)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
         }
@@ -56,7 +56,7 @@ public class GameGUIscript : MonoBehaviour
     }
     public void ReturnToTitle()
     {
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single);
     }
 
     public void PauseGame()
@@ -113,7 +113,7 @@ public class GameGUIscript : MonoBehaviour
         }
         tipText.GetComponent<Text>().text = new_tip_text;
 
-        int level_num = SceneManager.GetActiveScene().buildIndex - Constants.LEVEL_START+1;
+        int level_num = SceneManager.GetActiveScene().buildIndex+1;
         int prev_highscore = PlayerPrefs.GetInt("Level_"+ level_num.ToString() +"_Score", 9999);
         
         if(prev_highscore!=9999)
