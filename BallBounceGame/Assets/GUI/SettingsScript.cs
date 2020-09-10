@@ -136,7 +136,7 @@ public class SettingsScript : MonoBehaviour
 
         // Return to main menu and save settings
         PlayerPrefs.Save();
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single);
 
 
     }

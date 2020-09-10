@@ -14,6 +14,9 @@ public class GameGUIscript : MonoBehaviour
     private GameScript gameScriptRef;
     
     private Text scoreText;
+    public Text highscoreText; 
+    public Text pauseMenuHighscoreText;
+
 
     void RestartLevel()
     {
@@ -31,10 +34,13 @@ public class GameGUIscript : MonoBehaviour
     {
         tipText.SetActive(false);
         menuButton.SetActive(false);
-
         endGameMenu.SetActive(true);
+
         Vector2 stats = gameScriptRef.GetStats();
         scoreText.text = "TIME: " + stats.x.ToString("F2") + "\nBALLS: " + stats.y.ToString();
+
+        highscoreText.text=gameScriptRef.GetHighscore();
+        
 
     }
 
@@ -42,7 +48,7 @@ public class GameGUIscript : MonoBehaviour
     {
 
         // Loads next available level (current max of 5)
-        if( SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1)
+        if( SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - Constants.NON_LEVEL_SCENES)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
         }
@@ -50,7 +56,7 @@ public class GameGUIscript : MonoBehaviour
     }
     public void ReturnToTitle()
     {
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single);
     }
 
     public void PauseGame()
@@ -107,7 +113,11 @@ public class GameGUIscript : MonoBehaviour
         }
         tipText.GetComponent<Text>().text = new_tip_text;
 
+        int level_num = SceneManager.GetActiveScene().buildIndex+1;
+        int prev_highscore = PlayerPrefs.GetInt("Level_"+ level_num.ToString() +"_Score", 9999);
         
+        if(prev_highscore!=9999)
+            pauseMenuHighscoreText.text = "HIGHSCORE: " + prev_highscore.ToString();
 
        
         // Get reference to main game script to pull stats from later in the endgame screen

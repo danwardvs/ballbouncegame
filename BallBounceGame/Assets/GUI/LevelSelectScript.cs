@@ -6,15 +6,13 @@ public class LevelSelectScript : MonoBehaviour
 {
     public GameObject ButtonPrefab;
 
-    // Since the title screen, level select, and options screen come before
-    // the first levels in the build settings, the first actual level starts at scene number 4
-    const int LEVEL_START = 4;
+
 
     // Start is called before the first frame update
     void Start()
     {
         // Create the correct amount of buttons based on the number of scenes in the build settings
-        PopulateButtons(CreatePanel(), SceneManager.sceneCountInBuildSettings - LEVEL_START);
+        PopulateButtons(CreatePanel(), SceneManager.sceneCountInBuildSettings - Constants.NON_LEVEL_SCENES);
     }
 
     public void BackButtonPressed(){
@@ -25,9 +23,10 @@ public class LevelSelectScript : MonoBehaviour
     public void ResetSaves()
     {   
         // Rewrite all data to file
-        for (int i = 0; i < SceneManager.sceneCountInBuildSettings - LEVEL_START + 1; i++)
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings - Constants.NON_LEVEL_SCENES; i++)
         {
             PlayerPrefs.SetInt("Level_" + i.ToString(), 0);
+            PlayerPrefs.SetInt("Level_" + i.ToString() +"_Score", 9999);
 
         }
         PlayerPrefs.Save();
@@ -127,11 +126,11 @@ public class LevelSelectScript : MonoBehaviour
         return panel;
     }
 
-    // Load level
+    // Load level when level icon is pressed
     public void LoadLevel(int newLevel)
     {
-        newLevel += LEVEL_START - 1;
-        SceneManager.LoadScene(newLevel, LoadSceneMode.Single);
+        // Subtract one for zero indexing
+        SceneManager.LoadScene(newLevel-1, LoadSceneMode.Single);
     }
 
     // Update is called once per frame

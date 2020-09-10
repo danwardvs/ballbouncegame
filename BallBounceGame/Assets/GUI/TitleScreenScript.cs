@@ -14,18 +14,18 @@ public class TitleScreenScript : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene("LevelSelect", LoadSceneMode.Single);
     }
     public void QuitGame()
     {
         Application.Quit();
     }
     public void OpenSettings(){
-        SceneManager.LoadScene(2, LoadSceneMode.Single);
+        SceneManager.LoadScene("SettingsMenu", LoadSceneMode.Single);
 
     }
     public void OpenCredits(){
-        SceneManager.LoadScene(3, LoadSceneMode.Single);
+        SceneManager.LoadScene("CreditsScreen", LoadSceneMode.Single);
 
     }
 
