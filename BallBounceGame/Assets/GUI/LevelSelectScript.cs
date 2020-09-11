@@ -23,7 +23,7 @@ public class LevelSelectScript : MonoBehaviour
     public void ResetSaves()
     {   
         // Rewrite all data to file
-        for (int i = 0; i < SceneManager.sceneCountInBuildSettings - Constants.NON_LEVEL_SCENES; i++)
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings + 1 - Constants.NON_LEVEL_SCENES; i++)
         {
             PlayerPrefs.SetInt("Level_" + i.ToString(), 0);
             PlayerPrefs.SetInt("Level_" + i.ToString() +"_Score", 9999);
