@@ -3,6 +3,10 @@ A Unity2D game where you launch balls in a physics environment with the goal of 
 
 ![demo](https://user-images.githubusercontent.com/7853185/235373603-7d58ae26-2220-4823-9f41-692489e9e413.gif)
 
+# Playable Versions
+
+Compiled, built, ready to play versions are available on the Releases tab
+
 # Build instructions
 
 Project uses experimental 2D lighting from the Universal Render Pipeline
