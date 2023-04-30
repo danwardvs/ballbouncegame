@@ -5,6 +5,6 @@ A Unity2D game where you launch balls in a physics environment with the goal of 
 
 Project uses experimental 2D lighting from the Universal Render Pipeline
 
-Requires Unity 2020.1.0a12+
+Current editor version is 2021.3.24f1
 
-Depends Universal RP 7.15+, can be installed with the package manager. 
+Depends Universal RP 12.1.11, can be installed with the package manager. 
