@@ -15,7 +15,7 @@ public class GameScript : MonoBehaviour
     private GameObject initialClickIndicator;
     private GameObject distanceIndicator;
   
-    private UnityEngine.Experimental.Rendering.Universal.Light2D lightFlash;
+    private UnityEngine.Rendering.Universal.Light2D lightFlash;
     private AudioSource audioSource;
 
     // We store a reference to this so we can change colour without re-getting the object
@@ -100,7 +100,7 @@ public class GameScript : MonoBehaviour
         arrowObject = GameObject.Find("arrow");
         initialClickIndicator = GameObject.Find("InitialTouch");
         distanceIndicator = GameObject.Find("DistanceIndicator");
-        lightFlash = this.transform.Find("Light_Flash").GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
+        lightFlash = this.transform.Find("Light_Flash").GetComponent<UnityEngine.Rendering.Universal.Light2D>();
 
         // Get a reference to the attached AudioSource in the prefab
         audioSource = GetComponent<AudioSource>();
