@@ -8,7 +8,7 @@ public class GameBlockScript : MonoBehaviour
     void Start()
     {
         SpriteRenderer block_sprite_renderer = GetComponent<SpriteRenderer>();
-        UnityEngine.Experimental.Rendering.Universal.Light2D area_light = GameObject.Find("BlockLight").GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
+        UnityEngine.Rendering.Universal.Light2D area_light = GameObject.Find("BlockLight").GetComponent<UnityEngine.Rendering.Universal.Light2D>();
         
         area_light.color = block_sprite_renderer.color;
         print("butts");

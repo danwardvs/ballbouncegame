@@ -7,7 +7,7 @@ public class EndPoint : MonoBehaviour
 {   
     GameObject GameGUI;
     GameObject GameStart;
-    UnityEngine.Experimental.Rendering.Universal.Light2D LightPoint;
+    UnityEngine.Rendering.Universal.Light2D LightPoint;
     private float clock = 0;
     private float rotation_speed = 5;
     // Start is called before the first frame update
@@ -15,7 +15,7 @@ public class EndPoint : MonoBehaviour
     {
         GameGUI = GameObject.Find("GameGUI");
         GameStart = GameObject.Find("GameStart");
-        LightPoint = this.transform.Find("Light_Point").GetComponent<UnityEngine.Experimental.Rendering.Universal.Light2D>();
+        LightPoint = this.transform.Find("Light_Point").GetComponent<UnityEngine.Rendering.Universal.Light2D>();
 
     }
 
