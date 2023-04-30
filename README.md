@@ -1,6 +1,7 @@
 # Ball Bounce Game
 A Unity2D game where you launch balls in a physics environment with the goal of reaching a ball to the end tile.
-![Demo](demo.gif)
+
+![demo](https://user-images.githubusercontent.com/7853185/235373603-7d58ae26-2220-4823-9f41-692489e9e413.gif)
 
 # Build instructions
 
