@@ -120,7 +120,7 @@ public class GameGUIscript : MonoBehaviour
         }
         tipText.GetComponent<Text>().text = new_tip_text;
 
-        int level_num = SceneManager.GetActiveScene().buildIndex+1;
+        int level_num = SceneManager.GetActiveScene().buildIndex;
         int prev_highscore = PlayerPrefs.GetInt("Level_"+ level_num.ToString() +"_Score", 9999);
         
         if(prev_highscore!=9999)
