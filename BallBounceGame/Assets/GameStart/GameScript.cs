@@ -56,7 +56,7 @@ public class GameScript : MonoBehaviour
         // Write progress to file
         if(!levelFinish){
         
-            int level_num = SceneManager.GetActiveScene().buildIndex+1;
+            int level_num = SceneManager.GetActiveScene().buildIndex;
             print(level_num);
             int prev_highscore = PlayerPrefs.GetInt("Level_"+ level_num.ToString() +"_Score", 9999);
             if(prev_highscore > ballCount){

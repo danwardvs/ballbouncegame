@@ -23,7 +23,7 @@ public class LevelSelectScript : MonoBehaviour
     public void ResetSaves()
     {   
         // Rewrite all data to file
-        for (int i = 0; i < SceneManager.sceneCountInBuildSettings + 1 - Constants.NON_LEVEL_SCENES; i++)
+        for (int i = 1; i < SceneManager.sceneCountInBuildSettings+1 - Constants.NON_LEVEL_SCENES; i++)
         {
             PlayerPrefs.SetInt("Level_" + i.ToString(), 0);
             PlayerPrefs.SetInt("Level_" + i.ToString() +"_Score", 9999);
@@ -41,9 +41,9 @@ public class LevelSelectScript : MonoBehaviour
         int row = 0;
         int column = 0;
 
-        for (int i = 0; i < num; i++)
+        for (int i = 1; i < num+1; i++)
         {
-            int level = i + 1;
+            int level = i;
             CreateButton(-270.0f + column * 60.0f, -50.0f - row * 60.0f, level, panel);
 
             // Next row
@@ -129,8 +129,7 @@ public class LevelSelectScript : MonoBehaviour
     // Load level when level icon is pressed
     public void LoadLevel(int newLevel)
     {
-        // Subtract one for zero indexing
-        SceneManager.LoadScene(newLevel-1, LoadSceneMode.Single);
+        SceneManager.LoadScene(newLevel, LoadSceneMode.Single);
     }
 
     // Update is called once per frame

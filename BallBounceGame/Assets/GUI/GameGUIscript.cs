@@ -36,6 +36,13 @@ public class GameGUIscript : MonoBehaviour
         menuButton.SetActive(false);
         endGameMenu.SetActive(true);
 
+        // Hide next level button if on final level
+        if(SceneManager.GetActiveScene().buildIndex == Constants.FINAL_LEVEL_SCENE_BUILD_INDEX)
+            GameObject.Find("GameGUI/EndGameMenu/Next").SetActive(false);
+        else
+            GameObject.Find("GameGUI/EndGameMenu/Next").SetActive(true);
+
+
         Vector2 stats = gameScriptRef.GetStats();
         scoreText.text = "TIME: " + stats.x.ToString("F2") + "\nBALLS: " + stats.y.ToString();
 
@@ -47,7 +54,7 @@ public class GameGUIscript : MonoBehaviour
     public void LoadNextLevel()
     {
 
-        // Loads next available level (current max of 5)
+        // Loads next available level 
         if( SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - Constants.NON_LEVEL_SCENES)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
